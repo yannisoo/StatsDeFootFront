@@ -20,7 +20,7 @@ jobs:
 
     steps:
     - name: Lint Action
-      uses: wearerequired/lint-action
+      uses: wearerequired/lint-action@v1.6.0
     - uses: actions/checkout@v2
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v1
