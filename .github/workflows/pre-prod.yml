@@ -31,6 +31,7 @@ jobs:
       with:
        eslint-config-path: "./application/assets/js/.eslintrc.json"
        custom-directory: "./application"
+       repo-token: ${{secrets.GITHUB_TOKEN}}
     - uses: akhileshns/heroku-deploy@v3.5.6 # This is the action
       with:
         heroku_api_key: ${{secrets.HEROKU_API_KEY}}
