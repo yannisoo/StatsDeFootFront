@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "StatsDeFootFront": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "StatsDeFootFront"
+    }
+  },
+  "defaultProject": "StatsDeFootFront",
+  "cli": {
+    "analytics": "a8db98b5-2e56-435f-b8b5-c25c10fb83c1"
+  }
 }
