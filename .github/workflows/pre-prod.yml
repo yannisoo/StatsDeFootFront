@@ -6,8 +6,6 @@ name: pre-prod-build
 on:
   push:
     branches: [ pre-prod ]
-  pull_request:
-    branches: [ pre-prod ]
 
 jobs:
   build:

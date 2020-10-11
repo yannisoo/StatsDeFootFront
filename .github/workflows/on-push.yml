@@ -3,7 +3,12 @@
 
 name: onpush
 
-on: push
+on: 
+  push:
+     branches-ignore:
+      # Push events to branches matching refs/heads/mona/octocat
+     - 'master'
+     - 'pre-prod'
 
 jobs:
   build:
