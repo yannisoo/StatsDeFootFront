@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RechercheComparatifComponent } from './recherche-comparatif/recherche-comparatif.component';
 
 const routes: Routes = [
-  { path: 'comparatif', component: RechercheComparatifComponent }
+  { path: '', component: RechercheComparatifComponent }
 ];
 
 @NgModule({
