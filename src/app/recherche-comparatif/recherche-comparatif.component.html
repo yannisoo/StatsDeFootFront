@@ -1,0 +1,6 @@
+
+<div class='container' >
+    <div *ngFor="let item of currentData" (click)="callNextItem(item)">
+        <app-item class='item'  [datatype]='currentDatatype' [item]='item' ></app-item>
+    </div>
+</div>
