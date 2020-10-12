@@ -32,16 +32,20 @@ export class RechercheComparatifComponent implements OnInit {
     });
   }
   callNextItem(item){
+    // dans le cas on nous sommes sur un jeu de donnée pays appel des leagues correspondante
     if (this.currentDatatype === 'country'){
       this.leagueService.getLeaguesByCountry(item.country).subscribe((response) => {
         this.stageData(response.leagues, response.datatype);
       });
     }
+    // dans le cas on nous sommes sur un jeu de donnée league appel des équipes correspondante
     if (this.currentDatatype === 'league'){
       this.leagueService.getTeamsByLeague(item.league_id).subscribe((response) => {
         this.stageData(response.teams, response.datatype);
       });
     }
+     // dans le cas on nous sommes sur un jeu de donnée équipe ajout de cet équipe a la séléction 
+     // puis retour a la liste des pays pour selectioné la deuxieme équipe
     if (this.currentDatatype === 'team'){
       if (this.team1 === null){
         this.team1 = item;
