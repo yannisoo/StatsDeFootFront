@@ -8,36 +8,42 @@ import { LeagueService } from '../services/league.service';
   styleUrls: ['./recherche-comparatif.component.css']
 })
 export class RechercheComparatifComponent implements OnInit {
-  currentData 
-  currentDatatype
-  stagecountries
-  team1
+  // données affiché a un instant T
+  currentData;
+  // type des données affiché a un instant T
+  currentDatatype;
+  // Pays stocké
+  stagecountries;
+  // Equipe N°1
+  team1;
   constructor(
     private countryService: CountryService,
     private leagueService: LeagueService
-    ) { }
+    ){}
 
 
 
   ngOnInit(): void {
+    // appel du service pour récuperer les pays
     this.countryService.getAll().subscribe((response) => {
+      // stockage des pays dans une variable pour ne pas les recharger une deuxieme fois
       this.stagecountries = response;
       this.stageData(this.stagecountries.countries, this.stagecountries.datatype);
-    })
+    });
   }
   callNextItem(item){
-    if(this.currentDatatype == 'country'){
+    if (this.currentDatatype === 'country'){
       this.leagueService.getLeaguesByCountry(item.country).subscribe((response) => {
         this.stageData(response.leagues, response.datatype);
-      })
+      });
     }
-    if(this.currentDatatype == 'league'){
+    if (this.currentDatatype === 'league'){
       this.leagueService.getTeamsByLeague(item.league_id).subscribe((response) => {
         this.stageData(response.teams, response.datatype);
-      })
+      });
     }
-    if(this.currentDatatype == 'team'){
-      if(this.team1 == null){
+    if (this.currentDatatype === 'team'){
+      if (this.team1 === null){
         this.team1 = item;
         console.log(this.team1);
         this.stageData(this.stagecountries.countries, this.stagecountries.datatype);
@@ -45,7 +51,7 @@ export class RechercheComparatifComponent implements OnInit {
     }
   }
 
-  //change les données d'affichage selon les données recupéré
+  // change les données d'affichage selon les données recupéré
   stageData(staged, type){
       this.currentData = staged;
       this.currentDatatype = type;
