@@ -47,11 +47,9 @@ export class RechercheComparatifComponent implements OnInit {
      // dans le cas on nous sommes sur un jeu de donnée équipe ajout de cet équipe a la séléction
      // puis retour a la liste des pays pour selectioné la deuxieme équipe
     if (this.currentDatatype === 'team'){
-      if (this.team1 === null){
         this.team1 = item;
         console.log(this.team1);
         this.stageData(this.stagecountries.countries, this.stagecountries.datatype);
-      }
     }
   }
 
