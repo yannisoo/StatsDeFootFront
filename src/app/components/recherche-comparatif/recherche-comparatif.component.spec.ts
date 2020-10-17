@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
 import { RechercheComparatifComponent } from './recherche-comparatif.component';
+import { ComparativeCardComponent } from '../comparative-card/comparative-card.component';
 
 describe('RechercheComparatifComponent', () => {
   let component: RechercheComparatifComponent;
@@ -15,7 +16,7 @@ describe('RechercheComparatifComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RechercheComparatifComponent ]
+      declarations: [ RechercheComparatifComponent, ComparativeCardComponent ]
     })
     .compileComponents();
   });
