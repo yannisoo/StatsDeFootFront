@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from '../../app.component';
+import { AppComponent } from '../../../app.component';
 import { ItemComponent } from './item.component';
 
 describe('ItemComponent', () => {
