@@ -3,19 +3,15 @@ import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-
 @Injectable({
   providedIn: 'root'
 })
-export class LeagueService {
+export class TeamService {
 
   constructor(private http: HttpClient) { }
 
-  getLeaguesByCountry(country): Observable<any>{
-    return this.http.get<any>(environment.api + '/leaguesByCountry/' + country).pipe(catchError(this.handleError));
-  }
-  getTeamsByLeague(leagueID): Observable<any>{
-    return this.http.get<any>(environment.api + '/teamsByLeague/' + leagueID).pipe(catchError(this.handleError));
+  getTeam(teamID): Observable<any>{
+    return this.http.get<any>(environment.api + '/team/' + teamID).pipe(catchError(this.handleError));
   }
 
   private handleError(error: HttpErrorResponse) {
