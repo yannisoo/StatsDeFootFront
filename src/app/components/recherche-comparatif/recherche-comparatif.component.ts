@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { CountryService } from '../services/country.service';
-import { LeagueService } from '../services/league.service';
+import { CountryService } from '../../services/country.service';
+import { LeagueService } from '../../services/league.service';
 
 @Component({
   selector: 'app-recherche-comparatif',
