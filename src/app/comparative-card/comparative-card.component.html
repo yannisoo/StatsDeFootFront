@@ -2,11 +2,11 @@
     <div class="teams">
         <div *ngIf="firstTeamSelected" class="first-team">
             <img src="{{firstTeamSelected.logo}}" alt="">
-            <p *ngIf="firstTeamSelected;else default">{{firstTeamSelected.name}}</p>
+            <p *ngIf="firstTeamSelected">{{firstTeamSelected.name}}</p>
         </div>
         <div *ngIf="secondTeamSelected" class="second-team">
             <img src="{{secondTeamSelected.logo}}" alt="">
-            <p *ngIf="secondTeamSelected;else default">{{secondTeamSelected.name}}</p>     
+            <p *ngIf="secondTeamSelected">{{secondTeamSelected.name}}</p>     
         </div>
     </div>
     <div class="stats">
