@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ComparativeCardComponent implements OnInit {
   @Input() firstTeamSelected;
   @Input() secondTeamSelected;
-  @Output() resetTeamSelected = new EventEmitter()
+  @Output() resetTeamSelected = new EventEmitter();
   @Input() resettable;
 
   constructor() { }
@@ -16,7 +16,7 @@ export class ComparativeCardComponent implements OnInit {
   ngOnInit(): void {
   }
   reset() {
-    this.resettable = false
-    this.resetTeamSelected.emit()
+    this.resettable = false;
+    this.resetTeamSelected.emit();
   }
 }

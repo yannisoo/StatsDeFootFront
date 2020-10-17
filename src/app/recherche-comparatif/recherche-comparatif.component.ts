@@ -18,8 +18,9 @@ export class RechercheComparatifComponent implements OnInit {
   team1;
   // Equipe N°2
   team2;
-  // Passage des data de la team selectionné vers le comp. pere
-  @Output() sendTeamSelected = new EventEmitter()
+
+  resettable;
+
   constructor(
     private countryService: CountryService,
     private leagueService: LeagueService
@@ -52,11 +53,10 @@ export class RechercheComparatifComponent implements OnInit {
      // puis retour a la liste des pays pour selectioné la deuxieme équipe
     if (this.currentDatatype === 'team') {
       if (this.team1) {
-        this.team2 = item
+        this.team2 = item;
       } else {
         this.team1 = item;
       }
-      this.sendTeamSelected.emit(item)
       this.stageData(this.stagecountries.countries, this.stagecountries.datatype);
     }
   }
@@ -65,5 +65,13 @@ export class RechercheComparatifComponent implements OnInit {
   stageData(staged, type){
       this.currentData = staged;
       this.currentDatatype = type;
+  }
+
+
+
+  resetTeamSelected() {
+    this.team1 = null;
+    this.team2 = null;
+    this.resettable = false;
   }
 }
