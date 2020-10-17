@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CountryService } from '../services/country.service';
 import { LeagueService } from '../services/league.service';
 
@@ -16,6 +16,10 @@ export class RechercheComparatifComponent implements OnInit {
   stagecountries;
   // Equipe N°1
   team1;
+  // Equipe N°2
+  team2;
+  // Passage des data de la team selectionné vers le comp. pere
+  @Output() sendTeamSelected = new EventEmitter()
   constructor(
     private countryService: CountryService,
     private leagueService: LeagueService
@@ -46,10 +50,14 @@ export class RechercheComparatifComponent implements OnInit {
     }
      // dans le cas on nous sommes sur un jeu de donnée équipe ajout de cet équipe a la séléction
      // puis retour a la liste des pays pour selectioné la deuxieme équipe
-    if (this.currentDatatype === 'team'){
+    if (this.currentDatatype === 'team') {
+      if (this.team1) {
+        this.team2 = item
+      } else {
         this.team1 = item;
-        console.log(this.team1);
-        this.stageData(this.stagecountries.countries, this.stagecountries.datatype);
+      }
+      this.sendTeamSelected.emit(item)
+      this.stageData(this.stagecountries.countries, this.stagecountries.datatype);
     }
   }
 

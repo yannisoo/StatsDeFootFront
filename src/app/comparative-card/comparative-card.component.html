@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="teams">
+        <div *ngIf="firstTeamSelected" class="first-team">
+            <img src="{{firstTeamSelected.logo}}" alt="">
+            <p *ngIf="firstTeamSelected;else default">{{firstTeamSelected.name}}</p>
+        </div>
+        <div *ngIf="secondTeamSelected" class="second-team">
+            <img src="{{secondTeamSelected.logo}}" alt="">
+            <p *ngIf="secondTeamSelected;else default">{{secondTeamSelected.name}}</p>     
+        </div>
+    </div>
+    <div class="stats">
+    </div>
+    <button *ngIf="resettable === true" (click)=reset() class="btn-reset">Reset</button>
+</div>

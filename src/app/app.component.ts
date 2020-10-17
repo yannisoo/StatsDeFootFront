@@ -8,8 +8,25 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
 
   title = 'StatsDeFootFront';
+  firstTeamSelected
+  secondTeamSelected
+  resettable
 
-  constructor(){}
+  constructor() { }
 
-  ngOnInit(){}
+  ngOnInit() { }
+
+  keepTeam(team) {
+    this.resettable = true
+    if (this.firstTeamSelected) {
+      this.secondTeamSelected = team
+    } else {
+      this.firstTeamSelected = team
+    }
+  }
+  resetTeamSelected() {
+    this.firstTeamSelected = null
+    this.secondTeamSelected = null
+    this.resettable = false
+  }
 }
