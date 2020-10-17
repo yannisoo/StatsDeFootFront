@@ -9,7 +9,8 @@ export class AppComponent implements OnInit {
 
   title = 'StatsDeFootFront';
 
-  constructor(){}
+  constructor() { }
 
-  ngOnInit(){}
+  ngOnInit() { }
+
 }
