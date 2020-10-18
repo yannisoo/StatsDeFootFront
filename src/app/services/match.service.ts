@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class MatchService {
-  
+
   constructor(private http: HttpClient) { }
 
   getPreviousMatchesBetween2Teams(team1, team2): Observable<any>{
