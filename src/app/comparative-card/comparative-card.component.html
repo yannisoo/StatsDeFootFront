@@ -1,12 +1,21 @@
 <div class="container">
     <div class="teams">
         <div *ngIf="firstTeamSelected" class="first-team">
-            <img src="{{firstTeamSelected.logo}}" alt="">
-            <p *ngIf="firstTeamSelected">{{firstTeamSelected.name}}</p>
+            <app-team-info [team]="firstTeamSelected"></app-team-info>
+        </div>
+        <div class='scoreboard' *ngIf="secondTeamSelected">
+            <p>
+                Victoire {{firstTeamSelected.team_name}}: {{firstTeamSelected.statistics.wins.total}}
+            </p>  
+            <p>
+                Egalité: {{firstTeamSelected.statistics.draws.total}}
+            </p>   
+            <p>
+                Victoire {{secondTeamSelected.team_name}}: {{firstTeamSelected.statistics.loses.total}}
+            </p>    
         </div>
         <div *ngIf="secondTeamSelected" class="second-team">
-            <img src="{{secondTeamSelected.logo}}" alt="">
-            <p *ngIf="secondTeamSelected">{{secondTeamSelected.name}}</p>     
+            <app-team-info [team]="secondTeamSelected"></app-team-info>
         </div>
     </div>
     <div class="stats">
