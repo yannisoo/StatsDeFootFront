@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
-import localeFr from '@angular/common/locales/fr'
+import localeFr from '@angular/common/locales/fr';
 
 import { AppComponent } from './app.component';
 import { RechercheComparatifComponent } from './recherche-comparatif/recherche-comparatif.component';

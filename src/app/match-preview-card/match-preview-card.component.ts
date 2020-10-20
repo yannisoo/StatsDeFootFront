@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class MatchPreviewCardComponent implements OnInit {
 
   @Input() match;
-  
+
   constructor() { }
 
   ngOnInit(): void {
