@@ -20,8 +20,8 @@ export class MatchHistoryComparativeComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    let IDteam1 = this.route.snapshot.params.ID_team1
-    let IDteam2 = this.route.snapshot.params.ID_team2
+    const IDteam1 = this.route.snapshot.params.ID_team1;
+    const IDteam2 = this.route.snapshot.params.ID_team2;
     this.match.getPreviousMatchesBetween2Teams(IDteam1, IDteam2).subscribe((response) => {
       this.data = response;
       this.firstTeam = this.data.teams[0];
