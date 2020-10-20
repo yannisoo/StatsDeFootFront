@@ -8,33 +8,33 @@ import { MatchService } from '../services/match.service';
   styleUrls: ['./fautes.component.css']
 })
 export class FautesComponent implements OnInit {
-  match;
+  matchId;
   homeTeam;
   awayTeam;
 
   constructor(
     private route: ActivatedRoute,
-    private MatchService: MatchService
+    private match: MatchService
   ) { }
 
   ngOnInit(): void {
-    this.match = this.route.snapshot.params.match
+    this.matchId = this.route.snapshot.params.match;
 
-    this.MatchService.getMatchInfos(this.match).subscribe((response) => {
+    this.match.getMatchInfos(this.matchId).subscribe((response) => {
       response = response.statistics;
       this.homeTeam = {
-        'fouls': this.checkIfExist(response['Fouls'].home),
-        'yellow_card': this.checkIfExist(response['Yellow Cards'].home),
-        'red_card': this.checkIfExist(response['Red Cards'].home),
-        'offside': this.checkIfExist(response['Offsides'].home),
-      }
+        fouls: this.checkIfExist(response.Fouls.home),
+        yellow_card: this.checkIfExist(response['Yellow Cards'].home),
+        red_card: this.checkIfExist(response['Red Cards'].home),
+        offside: this.checkIfExist(response.Offsides.home),
+      };
       this.awayTeam = {
-        'fouls': this.checkIfExist(response['Fouls'].away),
-        'yellow_card': this.checkIfExist(response['Yellow Cards'].away),
-        'red_card': this.checkIfExist(response['Red Cards'].away),
-        'offside': this.checkIfExist(response['Offsides'].away)
-      }
-    })
+        fouls: this.checkIfExist(response.Fouls.away),
+        yellow_card: this.checkIfExist(response['Yellow Cards'].away),
+        red_card: this.checkIfExist(response['Red Cards'].away),
+        offside: this.checkIfExist(response.Offsides.away)
+      };
+    });
   }
   checkIfExist(res) {
     if (res) {
