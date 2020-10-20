@@ -15,6 +15,10 @@ export class MatchService {
     return this.http.get<any>(environment.api + '/previsousMatchesBetween2teams/' + team1 + '/' + team2).pipe(catchError(this.handleError));
   }
 
+  getLast5Matches(team): Observable<any>{
+    return this.http.get<any>(environment.api + '/last5MatchesOfATeam/' + team ).pipe(catchError(this.handleError));
+  }
+
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
         // A client-side or network error occurred. Handle it accordingly.

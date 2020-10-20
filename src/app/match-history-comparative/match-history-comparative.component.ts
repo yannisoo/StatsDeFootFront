@@ -9,11 +9,10 @@ import { MatchService } from '../services/match.service';
 })
 export class MatchHistoryComparativeComponent implements OnInit {
   data;
-  team1;
-  team2;
   resettable;
   firstTeam;
   secondTeam;
+  currentMatches;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,13 +20,12 @@ export class MatchHistoryComparativeComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.team1 = this.route.snapshot.params.team1;
-    this.team2 = this.route.snapshot.params.team2;
-    this.match.getPreviousMatchesBetween2Teams(this.team1, this.team2).subscribe((response) => {
+    this.match.getPreviousMatchesBetween2Teams(this.route.snapshot.params.ID_team1, this.route.snapshot.params.ID_team2).subscribe((response) => {
       this.data = response;
       this.firstTeam = this.data.teams[0];
       this.secondTeam = this.data.teams[1];
-      console.log(this.data);
+      this.currentMatches = this.data.fixtures.reverse();
+      console.log(this.currentMatches);
     });
   }
 
