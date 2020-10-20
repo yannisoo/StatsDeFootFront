@@ -6,7 +6,7 @@ import { MatchHistoryComparativeComponent } from './match-history-comparative/ma
 
 const routes: Routes = [
   { path: '', component: RechercheComparatifComponent },
-  { path: 'compare/:team1/:team2', component: MatchHistoryComparativeComponent}
+  { path: 'compare/:ID_team1/:ID_team2', component: MatchHistoryComparativeComponent}
 ];
 
 @NgModule({
