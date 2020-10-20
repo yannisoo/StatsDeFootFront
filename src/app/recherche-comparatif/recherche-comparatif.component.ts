@@ -53,10 +53,9 @@ export class RechercheComparatifComponent implements OnInit {
      // puis retour a la liste des pays pour selectioné la deuxieme équipe
     if (this.currentDatatype === 'team') {
       if (this.team1) {
-        this.router.navigate(["/compare/" + this.team1.team_id + "/" + item.team_id]);
+        this.router.navigate(['/compare/' + this.team1.team_id + '/' + item.team_id]);
       } else {
         this.team1 = item;
-        console.log(this.team1)
       }
       this.stageData(this.stagecountries.countries, this.stagecountries.datatype);
     }
