@@ -3,7 +3,7 @@ import { Component, Input, OnChanges } from '@angular/core';
 @Component({
   selector: 'app-fouls',
   templateUrl: './fouls.component.html',
-  styleUrls: ['./fouls.component.css']
+  styleUrls: ['./fouls.component.scss']
 })
 export class FoulsComponent implements OnChanges {
   @Input() statistique;

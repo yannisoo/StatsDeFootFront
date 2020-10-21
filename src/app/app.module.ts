@@ -16,6 +16,7 @@ import { FoulsComponent } from './fouls/fouls.component';
 import { StatsMatchComponent } from './stats-match/stats-match.component';
 import { FoulsTeamComponent } from './fouls/fouls-team/fouls-team.component';
 import { MatchPreviewCardComponent } from './match-preview-card/match-preview-card.component';
+import { MatchHistoryComparativeMenuComponent } from './match-history-comparative/match-history-comparative-menu/match-history-comparative-menu.component';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -27,10 +28,11 @@ registerLocaleData(localeFr, 'fr');
     ComparativeCardComponent,
     MatchHistoryComparativeComponent,
     TeamInfoComponent,
+    MatchPreviewCardComponent,
+    MatchHistoryComparativeMenuComponent,
     FoulsComponent,
     StatsMatchComponent,
-    FoulsTeamComponent,
-    MatchPreviewCardComponent,
+    FoulsTeamComponent
   ],
   imports: [
     BrowserModule,

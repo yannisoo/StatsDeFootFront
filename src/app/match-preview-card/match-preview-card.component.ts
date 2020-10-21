@@ -3,7 +3,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-match-preview-card',
   templateUrl: './match-preview-card.component.html',
-  styleUrls: ['./match-preview-card.component.css']
+  styleUrls: ['./match-preview-card.component.scss']
 })
 export class MatchPreviewCardComponent implements OnInit {
 

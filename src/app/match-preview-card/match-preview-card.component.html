@@ -1,8 +1,5 @@
 <div class="block" *ngIf="match.status != 'Match Cancelled' && match.status != 'Time to be defined'">
-    <div class="first-team" *ngIf="match.homeTeam.logo">
-        <img src={{match.homeTeam.logo}} alt="{{match.awayTeam.team_name}}">
-        <p>{{match.homeTeam.team_name}}</p>
-    </div>
+    <app-team-info [team]="match.homeTeam"></app-team-info>
     <div class="informations">
         <div class="scores" *ngIf="match.status == 'Match Finished' ">
             <p>{{match.goalsHomeTeam}} / {{match.goalsAwayTeam}}</p>
@@ -15,8 +12,5 @@
         </div>
     </div>
 
-    <div class="second-team" *ngIf="match.awayTeam.logo">
-        <img src={{match.awayTeam.logo}} alt="{{match.awayTeam.team_name}}">
-        <p>{{match.awayTeam.team_name}}</p>
-    </div>
+        <app-team-info [team]="match.awayTeam"></app-team-info>
 </div>
