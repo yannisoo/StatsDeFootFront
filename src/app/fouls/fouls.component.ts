@@ -6,25 +6,27 @@ import { Component, Input, OnChanges } from '@angular/core';
   styleUrls: ['./fouls.component.scss']
 })
 export class FoulsComponent implements OnChanges {
-  @Input() statistique;
+  @Input() statistics;
   homeTeam;
   awayTeam;
 
   constructor() { }
 
   ngOnChanges(): void {
-    this.homeTeam = {
-      fouls: this.checkIfExist(this.statistique.Fouls.home),
-      yellow_card: this.checkIfExist(this.statistique['Yellow Cards'].home),
-      red_card: this.checkIfExist(this.statistique['Red Cards'].home),
-      offside: this.checkIfExist(this.statistique.Offsides.home),
-    };
-    this.awayTeam = {
-      fouls: this.checkIfExist(this.statistique.Fouls.away),
-      yellow_card: this.checkIfExist(this.statistique['Yellow Cards'].away),
-      red_card: this.checkIfExist(this.statistique['Red Cards'].away),
-      offside: this.checkIfExist(this.statistique.Offsides.away)
-    };
+    if (this.statistics){
+      this.homeTeam = {
+        fouls: this.checkIfExist(this.statistics.Fouls.home),
+        yellow_card: this.checkIfExist(this.statistics['Yellow Cards'].home),
+        red_card: this.checkIfExist(this.statistics['Red Cards'].home),
+        offside: this.checkIfExist(this.statistics.Offsides.home),
+      };
+      this.awayTeam = {
+        fouls: this.checkIfExist(this.statistics.Fouls.away),
+        yellow_card: this.checkIfExist(this.statistics['Yellow Cards'].away),
+        red_card: this.checkIfExist(this.statistics['Red Cards'].away),
+        offside: this.checkIfExist(this.statistics.Offsides.away)
+      };
+    }
   }
 
   checkIfExist(res) {
