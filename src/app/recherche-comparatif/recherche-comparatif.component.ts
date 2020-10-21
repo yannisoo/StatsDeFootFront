@@ -6,7 +6,7 @@ import { LeagueService } from '../services/league.service';
 @Component({
   selector: 'app-recherche-comparatif',
   templateUrl: './recherche-comparatif.component.html',
-  styleUrls: ['./recherche-comparatif.component.css']
+  styleUrls: ['./recherche-comparatif.component.scss']
 })
 export class RechercheComparatifComponent implements OnInit {
   // données affiché a un instant T

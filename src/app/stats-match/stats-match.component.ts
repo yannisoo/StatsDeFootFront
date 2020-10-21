@@ -5,7 +5,7 @@ import { MatchService } from '../services/match.service';
 @Component({
   selector: 'app-stats-match',
   templateUrl: './stats-match.component.html',
-  styleUrls: ['./stats-match.component.css']
+  styleUrls: ['./stats-match.component.scss']
 })
 export class StatsMatchComponent implements OnInit {
   matchId;

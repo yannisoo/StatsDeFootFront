@@ -6,7 +6,7 @@ import { MatchService } from '../services/match.service';
 @Component({
   selector: 'app-match-history-comparative',
   templateUrl: './match-history-comparative.component.html',
-  styleUrls: ['./match-history-comparative.component.css']
+  styleUrls: ['./match-history-comparative.component.scss']
 })
 export class MatchHistoryComparativeComponent implements OnInit {
   // team 1 info
