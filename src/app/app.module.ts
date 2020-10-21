@@ -12,9 +12,9 @@ import { ItemComponent } from './recherche-comparatif/item/item.component';
 import { ComparativeCardComponent } from './comparative-card/comparative-card.component';
 import { MatchHistoryComparativeComponent } from './match-history-comparative/match-history-comparative.component';
 import { TeamInfoComponent } from './comparative-card/team-info/team-info.component';
-import { FautesComponent } from './fautes/fautes.component';
+import { FoulsComponent } from './fouls/fouls.component';
 import { StatsMatchComponent } from './stats-match/stats-match.component';
-import { TeamComponent } from './fautes/team/team.component';
+import { FoulsTeamComponent } from './fouls/fouls-team/fouls-team.component';
 import { MatchPreviewCardComponent } from './match-preview-card/match-preview-card.component';
 
 
@@ -27,9 +27,9 @@ registerLocaleData(localeFr, 'fr');
     ComparativeCardComponent,
     MatchHistoryComparativeComponent,
     TeamInfoComponent,
-    FautesComponent,
+    FoulsComponent,
     StatsMatchComponent,
-    TeamComponent,
+    FoulsTeamComponent,
     MatchPreviewCardComponent,
   ],
   imports: [

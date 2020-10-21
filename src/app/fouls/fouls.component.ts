@@ -3,11 +3,11 @@ import { ActivatedRoute } from '@angular/router';
 import { MatchService } from '../services/match.service';
 
 @Component({
-  selector: 'app-fautes',
-  templateUrl: './fautes.component.html',
-  styleUrls: ['./fautes.component.css']
+  selector: 'app-fouls',
+  templateUrl: './fouls.component.html',
+  styleUrls: ['./fouls.component.css']
 })
-export class FautesComponent implements OnInit {
+export class FoulsComponent implements OnInit {
   matchId;
   homeTeam;
   awayTeam;
