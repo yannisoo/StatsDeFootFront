@@ -1,11 +1,12 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { CountryService } from '../services/country.service';
 import { LeagueService } from '../services/league.service';
 
 @Component({
   selector: 'app-recherche-comparatif',
   templateUrl: './recherche-comparatif.component.html',
-  styleUrls: ['./recherche-comparatif.component.css']
+  styleUrls: ['./recherche-comparatif.component.scss']
 })
 export class RechercheComparatifComponent implements OnInit {
   // données affiché a un instant T
@@ -16,14 +17,13 @@ export class RechercheComparatifComponent implements OnInit {
   stagecountries;
   // Equipe N°1
   team1;
-  // Equipe N°2
-  team2;
 
   resettable;
 
   constructor(
     private countryService: CountryService,
-    private leagueService: LeagueService
+    private leagueService: LeagueService,
+    private router: Router
     ){}
 
 
@@ -53,7 +53,7 @@ export class RechercheComparatifComponent implements OnInit {
      // puis retour a la liste des pays pour selectioné la deuxieme équipe
     if (this.currentDatatype === 'team') {
       if (this.team1) {
-        this.team2 = item;
+        this.router.navigate(['/compare/' + this.team1.team_id + '/' + item.team_id]);
       } else {
         this.team1 = item;
       }
@@ -71,7 +71,6 @@ export class RechercheComparatifComponent implements OnInit {
 
   resetTeamSelected() {
     this.team1 = null;
-    this.team2 = null;
     this.resettable = false;
   }
 }

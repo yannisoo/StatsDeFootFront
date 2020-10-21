@@ -15,10 +15,13 @@ export class MatchService {
     return this.http.get<any>(environment.api + '/previsousMatchesBetween2teams/' + team1 + '/' + team2).pipe(catchError(this.handleError));
   }
 
+
+  getLast5Matches(team): Observable<any>{
+    return this.http.get<any>(environment.api + '/last5MatchesOfATeam/' + team ).pipe(catchError(this.handleError));
+  }
   getMatchInfos(id): Observable<any>{
     return this.http.get<any>(environment.api + '/matchStats/' + id).pipe(catchError(this.handleError));
   }
-
   getMatch(id): Observable<any>{
     return this.http.get<any>(environment.api + '/matchById/' + id).pipe(catchError(this.handleError));
   }

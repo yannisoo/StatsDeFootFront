@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { RechercheComparatifComponent } from './recherche-comparatif/recherche-comparatif.component';
 import { MatchHistoryComparativeComponent } from './match-history-comparative/match-history-comparative.component';
 import { PossessionPassComponent } from './components/statistics/possession-pass/possession-pass.component';
+import { StatsMatchComponent } from './stats-match/stats-match.component';
 
 const routes: Routes = [
-  { path: '', component: RechercheComparatifComponent },
-  { path: 'compare/:team1/:team2', component: MatchHistoryComparativeComponent},
-  { path: 'match/:id', component: PossessionPassComponent},
+    { path: '', component: RechercheComparatifComponent },
+    { path: 'stats-match/:match', component: StatsMatchComponent },
+    { path: 'compare/:ID_team1/:ID_team2', component: MatchHistoryComparativeComponent },
+    { path: 'match/:id', component: PossessionPassComponent},
 ];
 
 @NgModule({
