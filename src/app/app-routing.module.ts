@@ -7,7 +7,6 @@ import { StatsMatchComponent } from './stats-match/stats-match.component';
 
 const routes: Routes = [
   { path: '', component: RechercheComparatifComponent },
-  { path: 'compare/:team1/:team2', component: MatchHistoryComparativeComponent },
   { path: 'stats-match/:match', component: StatsMatchComponent },
   { path: 'compare/:ID_team1/:ID_team2', component: MatchHistoryComparativeComponent },
 ];
