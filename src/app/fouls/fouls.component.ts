@@ -1,41 +1,32 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { MatchService } from '../services/match.service';
+import { Component, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-fouls',
   templateUrl: './fouls.component.html',
   styleUrls: ['./fouls.component.css']
 })
-export class FoulsComponent implements OnInit {
-  matchId;
+export class FoulsComponent implements OnChanges {
+  @Input() statistique;
   homeTeam;
   awayTeam;
 
-  constructor(
-    private route: ActivatedRoute,
-    private match: MatchService
-  ) { }
+  constructor() { }
 
-  ngOnInit(): void {
-    this.matchId = this.route.snapshot.params.match;
-
-    this.match.getMatchInfos(this.matchId).subscribe((response) => {
-      response = response.statistics;
-      this.homeTeam = {
-        fouls: this.checkIfExist(response.Fouls.home),
-        yellow_card: this.checkIfExist(response['Yellow Cards'].home),
-        red_card: this.checkIfExist(response['Red Cards'].home),
-        offside: this.checkIfExist(response.Offsides.home),
-      };
-      this.awayTeam = {
-        fouls: this.checkIfExist(response.Fouls.away),
-        yellow_card: this.checkIfExist(response['Yellow Cards'].away),
-        red_card: this.checkIfExist(response['Red Cards'].away),
-        offside: this.checkIfExist(response.Offsides.away)
-      };
-    });
+  ngOnChanges(): void {
+    this.homeTeam = {
+      fouls: this.checkIfExist(this.statistique.Fouls.home),
+      yellow_card: this.checkIfExist(this.statistique['Yellow Cards'].home),
+      red_card: this.checkIfExist(this.statistique['Red Cards'].home),
+      offside: this.checkIfExist(this.statistique.Offsides.home),
+    };
+    this.awayTeam = {
+      fouls: this.checkIfExist(this.statistique.Fouls.away),
+      yellow_card: this.checkIfExist(this.statistique['Yellow Cards'].away),
+      red_card: this.checkIfExist(this.statistique['Red Cards'].away),
+      offside: this.checkIfExist(this.statistique.Offsides.away)
+    };
   }
+
   checkIfExist(res) {
     if (res) {
       return res;
@@ -43,4 +34,5 @@ export class FoulsComponent implements OnInit {
       return 0;
     }
   }
+
 }
