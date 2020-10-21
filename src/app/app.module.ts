@@ -12,6 +12,9 @@ import { ItemComponent } from './recherche-comparatif/item/item.component';
 import { ComparativeCardComponent } from './comparative-card/comparative-card.component';
 import { MatchHistoryComparativeComponent } from './match-history-comparative/match-history-comparative.component';
 import { TeamInfoComponent } from './comparative-card/team-info/team-info.component';
+import { FoulsComponent } from './fouls/fouls.component';
+import { StatsMatchComponent } from './stats-match/stats-match.component';
+import { FoulsTeamComponent } from './fouls/fouls-team/fouls-team.component';
 import { MatchPreviewCardComponent } from './match-preview-card/match-preview-card.component';
 import { MatchHistoryComparativeMenuComponent } from './match-history-comparative/match-history-comparative-menu/match-history-comparative-menu.component';
 
@@ -26,14 +29,17 @@ registerLocaleData(localeFr, 'fr');
     MatchHistoryComparativeComponent,
     TeamInfoComponent,
     MatchPreviewCardComponent,
-    MatchHistoryComparativeMenuComponent
+    MatchHistoryComparativeMenuComponent,
+    FoulsComponent,
+    StatsMatchComponent,
+    FoulsTeamComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [{provide: LOCALE_ID, useValue: 'fr' }],
+  providers: [{ provide: LOCALE_ID, useValue: 'fr' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
