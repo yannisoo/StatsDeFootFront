@@ -19,5 +19,4 @@ export class MatchPreviewCardComponent implements OnInit {
   OpenAMatch(id){
     this.router.navigate(['/stats-match/' + id ]);
   }
-  
-} 
+}
