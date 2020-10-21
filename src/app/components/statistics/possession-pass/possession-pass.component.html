@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="possession-container">
+        <div class="left">
+            <p>{{dataMatch.homeTeam.team_name}}</p>
+            <p>{{this.dataInfos['Ball Possession'].home}}</p>
+        </div>
+        <div class="chart-container" style="position: relative;">
+            <canvas id="possession"></canvas>
+        </div>
+        <div class="right">
+            <p>{{dataMatch.awayTeam.team_name}}</p>
+            <p>{{this.dataInfos['Ball Possession'].away}}</p>
+        </div>   
+    </div>
+    <div class="passes-container">
+        <div class="left">
+            <p>{{dataMatch.homeTeam.team_name}}</p>
+            <p>{{this.dataInfos['Ball Possession'].home}}</p>
+        </div>
+        <div class="bar">
+            <div class="homeBar" [style.width]="passesHome + '%'">
+                    NIQUETAMERE
+            </div>
+            <div class="awayBar" [style.width]="passesAway + '%'">
+                NIQUETONPERE
+        </div>
+        </div>
+    </div>
+</div>

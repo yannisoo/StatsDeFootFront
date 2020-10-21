@@ -9,6 +9,7 @@ import { ItemComponent } from './recherche-comparatif/item/item.component';
 import { ComparativeCardComponent } from './comparative-card/comparative-card.component';
 import { MatchHistoryComparativeComponent } from './match-history-comparative/match-history-comparative.component';
 import { TeamInfoComponent } from './comparative-card/team-info/team-info.component';
+import { PossessionPassComponent } from './components/statistics/possession-pass/possession-pass.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TeamInfoComponent } from './comparative-card/team-info/team-info.compon
     ItemComponent,
     ComparativeCardComponent,
     MatchHistoryComparativeComponent,
-    TeamInfoComponent
+    TeamInfoComponent,
+    PossessionPassComponent
   ],
   imports: [
     BrowserModule,

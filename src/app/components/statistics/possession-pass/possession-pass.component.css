@@ -1,0 +1,33 @@
+.container{
+    border: 1px solid;
+    width:98vw;
+    height: 45vh;
+    margin: 1%;
+}
+.possession-container{
+    display: flex;
+    width: 100%;
+}
+
+.right, .left{
+    width: 19vw;
+    text-align: center;
+    padding-top: 30%;
+}
+
+.chart-container{
+    width: 60vw;
+    height: 30vh;
+}
+
+.bar{
+
+}
+
+.homeBar{
+    background: red;
+}
+
+.awayBar{
+    background: blue;
+}
