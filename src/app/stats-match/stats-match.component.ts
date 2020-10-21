@@ -9,7 +9,8 @@ import { MatchService } from '../services/match.service';
 })
 export class StatsMatchComponent implements OnInit {
   matchId;
-  statistique;
+  statistics;
+  data;
   constructor(
     private route: ActivatedRoute,
     private match: MatchService
@@ -17,9 +18,9 @@ export class StatsMatchComponent implements OnInit {
 
   ngOnInit(): void {
     this.matchId = this.route.snapshot.params.match;
-
-    this.match.getMatchInfos(this.matchId).subscribe((response) => {
-      this.statistique = response.statistics;
+    this.match.getMatch(this.matchId).subscribe((response) => {
+      this.statistics = response.fixtures[0].statistics;
+      this.data = response.fixtures[0];
     });
   }
 
