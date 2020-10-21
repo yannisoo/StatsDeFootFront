@@ -9,8 +9,7 @@ import { StatsMatchComponent } from './stats-match/stats-match.component';
 const routes: Routes = [
     { path: '', component: RechercheComparatifComponent },
     { path: 'stats-match/:match', component: StatsMatchComponent },
-    { path: 'compare/:ID_team1/:ID_team2', component: MatchHistoryComparativeComponent },
-    { path: 'match/:id', component: PossessionPassComponent},
+    { path: 'compare/:ID_team1/:ID_team2', component: MatchHistoryComparativeComponent }
 ];
 
 @NgModule({
