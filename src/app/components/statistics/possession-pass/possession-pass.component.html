@@ -1,29 +1,37 @@
 <div class="container">
+    <h3>Possession de Balle</h3>
     <div class="possession-container">
-        <div class="left">
-            <p>{{dataMatch.homeTeam.team_name}}</p>
+        <div class="left-possession">
+            <app-team-info [team]="dataMatch.homeTeam"></app-team-info>
             <p>{{this.dataInfos['Ball Possession'].home}}</p>
         </div>
         <div class="chart-container" style="position: relative;">
             <canvas id="possession"></canvas>
         </div>
-        <div class="right">
-            <p>{{dataMatch.awayTeam.team_name}}</p>
+        <div class="right-possession">
+            <app-team-info [team]="dataMatch.awayTeam"></app-team-info>
             <p>{{this.dataInfos['Ball Possession'].away}}</p>
         </div>   
     </div>
+    <h3>Passes Réussis</h3>
     <div class="passes-container">
-        <div class="left">
-            <p>{{dataMatch.homeTeam.team_name}}</p>
-            <p>{{this.dataInfos['Ball Possession'].home}}</p>
+        <div class="passes-container-value">
+            <div class="left-passes">
+                <p>{{dataMatch.homeTeam.team_name}}</p>
+                <p>{{this.dataInfos['Passes accurate'].home}} / {{this.dataInfos['Total passes'].home}}</p>
+            </div>
+            <div class="right-passes">
+                <p>{{dataMatch.awayTeam.team_name}}</p>
+                <p>{{this.dataInfos['Passes accurate'].away}} / {{this.dataInfos['Total passes'].away}}</p>
+            </div>
         </div>
         <div class="bar">
             <div class="homeBar" [style.width]="passesHome + '%'">
-                    NIQUETAMERE
+                <p>{{this.dataInfos['Passes %'].home}}</p>
             </div>
             <div class="awayBar" [style.width]="passesAway + '%'">
-                NIQUETONPERE
-        </div>
+                <p>{{this.dataInfos['Passes %'].away}}</p>
+            </div>
         </div>
     </div>
 </div>

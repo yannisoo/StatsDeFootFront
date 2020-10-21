@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MatchService } from 'src/app/services/match.service';
 import { Chart } from 'chart.js';
@@ -10,6 +10,7 @@ import { Chart } from 'chart.js';
 })
 export class PossessionPassComponent implements OnInit {
 
+  // @Input() statistics;
   id;
   dataInfos: Array<object>  = [{}];
   dataMatch;
@@ -43,13 +44,12 @@ export class PossessionPassComponent implements OnInit {
   possessionBall(){
     const possessionHome = this.dataInfos['Ball Possession'].home.replace('%', '');
     const possessionAway = this.dataInfos['Ball Possession'].away.replace('%', '');
-    const title = 'Possession de balles';
-    const options = this.options(title, true);
+    const options = this.options(true);
     const ctx = document.getElementById('possession') as HTMLCanvasElement;
     const myChart = new Chart(ctx, {
       type:  'doughnut',
       data: {
-        labels : [this.dataMatch.homeTeam.team_name, this.dataMatch.awayTeam.team_name],
+        labels : [this.dataMatch.awayTeam.team_name, this.dataMatch.homeTeam.team_name],
         datasets: [{
           data: [possessionAway, possessionHome],
           backgroundColor: [
@@ -76,7 +76,7 @@ passesAccuracy(){
 }
 
 
-  options(title: string, legend?: boolean) {
+  options(legend?: boolean) {
     return {
         elements: {
             line: {
@@ -86,10 +86,6 @@ passesAccuracy(){
         legend: {
             display: false,
             position: 'right',
-        },
-        title: {
-            display: true,
-            text: title,
         },
         responsive: true,
         maintainAspectRatio: false,
