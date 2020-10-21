@@ -1,3 +1,3 @@
-<app-comparative-card [resettable]="resettable" (resetTeamSelected)='resetTeamSelected()' [firstTeamSelected]="firstTeam" [secondTeamSelected]="secondTeam"></app-comparative-card>
-
+<app-comparative-card  [firstTeamSelected]="firstTeam" [secondTeamSelected]="secondTeam"></app-comparative-card>
+<app-match-history-comparative-menu [team]="menu" (changeCurrentMatches)="changeCurrentMatches($event)"></app-match-history-comparative-menu>
 <app-match-preview-card [match]='item' *ngFor="let item of currentMatches"></app-match-preview-card>

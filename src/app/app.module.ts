@@ -13,6 +13,7 @@ import { ComparativeCardComponent } from './comparative-card/comparative-card.co
 import { MatchHistoryComparativeComponent } from './match-history-comparative/match-history-comparative.component';
 import { TeamInfoComponent } from './comparative-card/team-info/team-info.component';
 import { MatchPreviewCardComponent } from './match-preview-card/match-preview-card.component';
+import { MatchHistoryComparativeMenuComponent } from './match-history-comparative/match-history-comparative-menu/match-history-comparative-menu.component';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -24,7 +25,8 @@ registerLocaleData(localeFr, 'fr');
     ComparativeCardComponent,
     MatchHistoryComparativeComponent,
     TeamInfoComponent,
-    MatchPreviewCardComponent
+    MatchPreviewCardComponent,
+    MatchHistoryComparativeMenuComponent
   ],
   imports: [
     BrowserModule,
