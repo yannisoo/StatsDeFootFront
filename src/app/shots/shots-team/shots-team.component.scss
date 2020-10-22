@@ -1,9 +1,12 @@
 .container{
     display: flex;
     flex-direction: column;
-    margin-top: 40%;
+    margin-top: 20%;
     margin-right: 40px;
     margin-left: 40px;
+}
+.container div{
+    margin: 20px;
 }
 p{
     text-align: center;
@@ -23,9 +26,4 @@ p{
 
 .number{
     font-size: 35px;
-}
-
-.canvas{
-    width: 75%;
-    height: 75%;
 }

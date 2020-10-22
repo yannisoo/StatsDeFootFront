@@ -23,7 +23,7 @@ export class ShotsTeamComponent implements OnInit {
     const myChart = new Chart(ctx, {
       type: 'pie',
       data: {
-        labels: ["Tir cadré", "Tir non cadré", "Tir bloqué"],
+        labels: ["Tirs cadrés", "Tirs non cadrés", "Tirs bloqués"],
         datasets: [{
           data: [
             this.team.shots_on_goal,
