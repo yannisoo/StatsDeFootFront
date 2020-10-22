@@ -15,9 +15,8 @@ export class ShotsComponent implements OnChanges {
   }
 
   ngOnInit(): void {
-    console.log(this.statistics)
     this.homeTeam = {
-      from: "home",
+      from: 'home',
       shots_insidebox: this.checkIfExist(this.statistics['Shots insidebox'].home),
       shots_outsidebox: this.checkIfExist(this.statistics['Shots outsidebox'].home),
       shots_off_goal: this.checkIfExist(this.statistics['Shots off Goal'].home),
@@ -26,7 +25,7 @@ export class ShotsComponent implements OnChanges {
       total_shots: this.checkIfExist(this.statistics['Total Shots'].home),
     };
     this.awayTeam = {
-      from: "away",
+      from: 'away',
       shots_insidebox: this.checkIfExist(this.statistics['Shots insidebox'].away),
       shots_outsidebox: this.checkIfExist(this.statistics['Shots outsidebox'].away),
       shots_off_goal: this.checkIfExist(this.statistics['Shots off Goal'].away),

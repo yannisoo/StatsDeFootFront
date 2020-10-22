@@ -11,19 +11,17 @@ export class ShotsTeamComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.team)
+    // TODO : set un id dynamic direcement dans l'html;
 
-    // TODO : set un id dynamic direcement dans l'html
+    const element = document.getElementById('chart');
+    element.setAttribute('id', 'chart-' + this.team.from);
 
-    const element = document.getElementById('chart')
-    element.setAttribute('id', 'chart-' + this.team.from)
-
-    const ctx = document.getElementById('chart-' + this.team.from)
+    const ctx = document.getElementById('chart-' + this.team.from);
 
     const myChart = new Chart(ctx, {
       type: 'pie',
       data: {
-        labels: ["Tirs cadrés", "Tirs non cadrés", "Tirs bloqués"],
+        labels: ['Tirs cadrés', 'Tirs non cadrés', 'Tirs bloqués'],
         datasets: [{
           data: [
             this.team.shots_on_goal,
@@ -33,7 +31,7 @@ export class ShotsTeamComponent implements OnInit {
           backgroundColor: [
             'rgba(255, 99, 132, 0.6)',
             'rgba(54, 162, 235, 0.6)',
-            'rgba(128, 71, 14, 0.6)',
+            'gba(128, 71, 14, 0.6)',
           ],
           borderColor: [
             'rgba(255, 99, 132, 1)',
