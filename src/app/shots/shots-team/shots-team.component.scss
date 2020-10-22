@@ -1,0 +1,31 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 40%;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+p{
+    text-align: center;
+    font-weight: bold;
+}
+.shots-group{
+    display: flex;
+    flex-direction: row;
+}
+.shots-group div{
+    margin: 5px 6px;
+}
+.title{
+    font-weight: bold;
+    font-size: 25px;
+}  
+
+.number{
+    font-size: 35px;
+}
+
+.canvas{
+    width: 75%;
+    height: 75%;
+}
