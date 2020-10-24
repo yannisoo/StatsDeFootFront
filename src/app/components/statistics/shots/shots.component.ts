@@ -12,7 +12,7 @@ export class ShotsComponent implements OnChanges {
   constructor() { }
 
   ngOnChanges(): void {
-  
+
     // Verify that we have the data
     if (this.statistics){
     this.homeTeam = {
