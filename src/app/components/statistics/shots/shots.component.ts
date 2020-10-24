@@ -10,11 +10,11 @@ export class ShotsComponent implements OnChanges {
   homeTeam;
   awayTeam;
   constructor() { }
-  ngOnChanges(changes: SimpleChanges): void {
-    throw new Error('Method not implemented.');
-  }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
+    
+    // Verify that we have the data
+    if (this.statistics){
     this.homeTeam = {
       from: 'home',
       shots_insidebox: this.checkIfExist(this.statistics['Shots insidebox'].home),
@@ -33,6 +33,7 @@ export class ShotsComponent implements OnChanges {
       blocked_shots: this.checkIfExist(this.statistics['Blocked Shots'].away),
       total_shots: this.checkIfExist(this.statistics['Total Shots'].away),
     };
+  }
 
   }
   checkIfExist(res) {

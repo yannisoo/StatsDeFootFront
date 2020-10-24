@@ -7,33 +7,33 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 
 import { AppComponent } from './app.component';
-import { RechercheComparatifComponent } from './recherche-comparatif/recherche-comparatif.component';
-import { ItemComponent } from './recherche-comparatif/item/item.component';
-import { ComparativeCardComponent } from './comparative-card/comparative-card.component';
-import { MatchHistoryComparativeComponent } from './match-history-comparative/match-history-comparative.component';
-import { TeamInfoComponent } from './comparative-card/team-info/team-info.component';
+import { ComparativeSearchComponent } from './components/comparative/comparative-search/comparative-search.component';
+import { ComparativeSearchItemComponent } from './components/comparative/comparative-search/comparative-search-item/comparative-search-item.component';
+import { ComparativeCardComponent } from './components/comparative/comparative-card/comparative-card.component';
+import { ComparativeMatchHistoryComponent } from './components/comparative/comparative-match-history/comparative-match-history.component';
+import { TeamInfoComponent } from './components/_utils/team-info/team-info.component';
 import { PossessionPassComponent } from './components/statistics/possession-pass/possession-pass.component';
-import { FoulsComponent } from './fouls/fouls.component';
-import { StatsMatchComponent } from './stats-match/stats-match.component';
-import { FoulsTeamComponent } from './fouls/fouls-team/fouls-team.component';
-import { MatchPreviewCardComponent } from './match-preview-card/match-preview-card.component';
-import { MatchHistoryComparativeMenuComponent } from './match-history-comparative/match-history-comparative-menu/match-history-comparative-menu.component';
-import { ShotsComponent } from './shots/shots.component';
-import { ShotsTeamComponent } from './shots/shots-team/shots-team.component';
+import { FoulsComponent } from './components/statistics/fouls/fouls.component';
+import { StatsMatchComponent } from './components/stats-match/stats-match.component';
+import { FoulsTeamComponent } from './components/statistics/fouls/fouls-team/fouls-team.component';
+import { MatchPreviewCardComponent } from './components/_utils/match-preview-card/match-preview-card.component';
+import { ComparativeMatchHistoryMenuComponent } from './components/comparative/comparative-match-history/comparative-match-history-menu/comparative-match-history-menu.component';
+import { ShotsComponent } from './components/statistics/shots/shots.component';
+import { ShotsTeamComponent } from './components/statistics/shots/shots-team/shots-team.component';
 
 
 registerLocaleData(localeFr, 'fr');
 @NgModule({
   declarations: [
     AppComponent,
-    RechercheComparatifComponent,
-    ItemComponent,
+    ComparativeSearchComponent,
+    ComparativeSearchItemComponent,
     ComparativeCardComponent,
-    MatchHistoryComparativeComponent,
+    ComparativeMatchHistoryComponent,
     TeamInfoComponent,
     PossessionPassComponent,
     MatchPreviewCardComponent,
-    MatchHistoryComparativeMenuComponent,
+    ComparativeMatchHistoryMenuComponent,
     FoulsComponent,
     StatsMatchComponent,
     FoulsTeamComponent,

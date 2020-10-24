@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MatchService } from '../services/match.service';
+import { MatchService } from '../../services/match.service';
 
 @Component({
   selector: 'app-stats-match',

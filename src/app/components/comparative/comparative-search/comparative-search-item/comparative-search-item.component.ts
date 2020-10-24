@@ -2,10 +2,10 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-item',
-  templateUrl: './item.component.html',
-  styleUrls: ['./item.component.scss']
+  templateUrl: './comparative-search-item.component.html',
+  styleUrls: ['./comparative-search-item.component.scss']
 })
-export class ItemComponent implements OnInit {
+export class ComparativeSearchItemComponent implements OnInit {
   @Input() item;
   @Input() datatype;
 
