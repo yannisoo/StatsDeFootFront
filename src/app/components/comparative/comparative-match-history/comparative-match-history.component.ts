@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { TestBed } from '@angular/core/testing';
 import {ActivatedRoute} from '@angular/router';
-import { MatchService } from '../services/match.service';
+import { MatchService } from '../../../services/match.service';
 
 @Component({
-  selector: 'app-match-history-comparative',
-  templateUrl: './match-history-comparative.component.html',
-  styleUrls: ['./match-history-comparative.component.scss']
+  selector: 'app-comparative-match-history',
+  templateUrl: './comparative-match-history.component.html',
+  styleUrls: ['./comparative-match-history.component.scss']
 })
-export class MatchHistoryComparativeComponent implements OnInit {
+export class ComparativeMatchHistoryComponent implements OnInit {
   // team 1 info
   firstTeam;
   // team 2 info
@@ -48,10 +47,10 @@ export class MatchHistoryComparativeComponent implements OnInit {
       // call backend to recover single team history
       // included in the callback to avoid latency on first print
       this.match.getLast5Matches(IDteam1).subscribe((responseT1) => {
-        this.firstTeamHistory = responseT1.fixtures.reverse();
+        this.firstTeamHistory = responseT1.fixtures;
       });
       this.match.getLast5Matches(IDteam2).subscribe((responseT2) => {
-        this.secondTeamHistory = responseT2.fixtures.reverse();
+        this.secondTeamHistory = responseT2.fixtures;
       });
     });
 

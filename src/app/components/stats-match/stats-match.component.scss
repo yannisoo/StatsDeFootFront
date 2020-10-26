@@ -1,0 +1,16 @@
+.container{
+    margin-top: 50px;
+    display: flex;
+    width: 100vw;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+app-fouls, app-possession-pass, app-shots{
+    width: 600px;
+    margin: 13px auto;
+}
+@media only screen and (max-width: 600px) {
+    app-fouls, app-possession-pass, app-shots{
+        width: 100vw;
+    }
+}

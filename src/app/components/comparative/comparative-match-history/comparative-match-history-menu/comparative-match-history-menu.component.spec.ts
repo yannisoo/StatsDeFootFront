@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MatchHistoryComparativeMenuComponent } from './match-history-comparative-menu.component';
+import { MatchHistoryComparativeMenuComponent } from './comparative-match-history-menu.component';
 
 describe('MatchHistoryComparativeMenuComponent', () => {
   let component: MatchHistoryComparativeMenuComponent;

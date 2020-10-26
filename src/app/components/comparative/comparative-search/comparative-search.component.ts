@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { CountryService } from '../services/country.service';
-import { LeagueService } from '../services/league.service';
+import { CountryService } from '../../../services/country.service';
+import { LeagueService } from '../../../services/league.service';
 
 @Component({
-  selector: 'app-recherche-comparatif',
-  templateUrl: './recherche-comparatif.component.html',
-  styleUrls: ['./recherche-comparatif.component.scss']
+  selector: 'app-comparative-search',
+  templateUrl: './comparative-search.component.html',
+  styleUrls: ['./comparative-search.component.scss']
 })
-export class RechercheComparatifComponent implements OnInit {
+export class ComparativeSearchComponent implements OnInit {
   // données affiché a un instant T
   currentData;
   // type des données affiché a un instant T

@@ -1,0 +1,8 @@
+<app-match-preview-card [match]='data' ></app-match-preview-card>
+<div class="container">
+    <app-possession-pass *ngIf="statistics" [statistics]='statistics' [data]='data'></app-possession-pass>
+
+    <app-fouls *ngIf="statistics" [statistics]='statistics'></app-fouls>
+
+    <app-shots *ngIf="statistics" [statistics]='statistics'></app-shots>
+</div>
