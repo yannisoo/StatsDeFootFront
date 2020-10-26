@@ -5,16 +5,12 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
-app-fouls{
+app-fouls, app-possession-pass, app-shots{
     width: 600px;
-    height:579px;
+    margin: 13px auto;
 }
-app-shots{
-    width:600px;
-    height:579px;
+@media only screen and (max-width: 600px) {
+    app-fouls, app-possession-pass, app-shots{
+        width: 100vw;
+    }
 }
-app-possession-pass{
-    width:600px;
-    height:579px;
-}
-
