@@ -1,0 +1,15 @@
+<div class="card">
+    <h4 class="league">{{match.league.country}} / {{match.league.name}}</h4>
+    <hr>
+    <div class="score">
+        <app-team-info [team]='match.homeTeam'></app-team-info>
+        <div class="middleHolder">
+            <div class="time">{{ match.event_date | date: 'HH:mm' }}</div>
+            <div *ngIf="match.statusShort == '2H' || match.statusShort == '1H'" class="cote">{{match.elapsed}}"</div>
+            <div *ngIf="match.score.fulltime" class="cote">{{match.score.fulltime}}</div>
+            <div *ngIf="!match.score.fulltime" class="cote">{{match.score.halftime}}</div>
+
+        </div>
+        <app-team-info [team]='match.awayTeam'></app-team-info>
+    </div>
+</div>

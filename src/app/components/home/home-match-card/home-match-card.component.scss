@@ -1,0 +1,17 @@
+.card{
+    width:100%;
+    background-color: lightgrey;
+    height: 350px;
+    padding: 10px
+}
+
+.score{
+    display: flex;
+    width:100%;
+    justify-content: space-around;
+}
+.middleHolder{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
