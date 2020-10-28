@@ -25,6 +25,9 @@ export class MatchService {
   getMatch(id): Observable<any>{
     return this.http.get<any>(environment.api + '/matchById/' + id).pipe(catchError(this.handleError));
   }
+  getMatchesByDate(date): Observable<any>{
+    return this.http.get<any>(environment.api + '/matchByDate/' + date).pipe(catchError(this.handleError));
+  }
 
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {

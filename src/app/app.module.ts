@@ -20,6 +20,8 @@ import { MatchPreviewCardComponent } from './components/_utils/match-preview-car
 import { ComparativeMatchHistoryMenuComponent } from './components/comparative/comparative-match-history/comparative-match-history-menu/comparative-match-history-menu.component';
 import { ShotsComponent } from './components/statistics/shots/shots.component';
 import { ShotsTeamComponent } from './components/statistics/shots/shots-team/shots-team.component';
+import { HomeMatchCardComponent } from './components/home/home-match-card/home-match-card.component';
+import { HomePageComponent } from './components/home/home-page/home-page.component';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -38,7 +40,9 @@ registerLocaleData(localeFr, 'fr');
     StatsMatchComponent,
     FoulsTeamComponent,
     ShotsComponent,
-    ShotsTeamComponent
+    ShotsTeamComponent,
+    HomeMatchCardComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
