@@ -42,7 +42,7 @@ export class ComparativeSearchComponent implements OnInit {
     // dans le cas on nous sommes sur un jeu de donnée pays appel des leagues correspondante
     if (this.currentDatatype === 'country'){
       this.leagueService.getLeaguesByCountry(item.country).subscribe((response) => {
-        this.stageleagues = response
+        this.stageleagues = response;
         this.stageData(response.leagues, response.datatype);
       });
     }
@@ -70,12 +70,12 @@ export class ComparativeSearchComponent implements OnInit {
       this.currentDatatype = type;
   }
   backToPrevious(currentDatatype) {
-    if (currentDatatype == 'league') {
+    if (currentDatatype === 'league') {
       this.stageData(this.stagecountries.countries, this.stagecountries.datatype);
-      this.currentData = this.stagecountries.countries
-    } else if (currentDatatype == 'team') {
-      this.currentDatatype = 'league'
-      this.currentData = this.stageleagues.leagues
+      this.currentData = this.stagecountries.countries;
+    } else if (currentDatatype === 'team') {
+      this.currentDatatype = 'league';
+      this.currentData = this.stageleagues.leagues;
     }
   }
 
