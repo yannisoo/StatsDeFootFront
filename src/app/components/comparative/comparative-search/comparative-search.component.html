@@ -1,9 +1,6 @@
 <app-comparative-card  [firstTeamSelected]="team1" ></app-comparative-card>
-<div>
-    <button (click)="backToPrevious(currentDatatype)" *ngIf="currentDatatype != 'country'">Previous</button>
-</div>
 <div class='container' >
-    <div *ngFor="let item of currentData" (click)="callNextItem(item)">
+    <div *ngFor="let item of currentData" (click)="compare(item)">
         <app-item class='item'  [datatype]='currentDatatype' [item]='item' ></app-item>
     </div>
 </div>

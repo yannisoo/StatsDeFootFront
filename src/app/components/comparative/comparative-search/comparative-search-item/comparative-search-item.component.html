@@ -1,5 +1,7 @@
 
-<img *ngIf="datatype == 'country'" src={{item.flag}} alt={{item.country}}>
-<img  *ngIf="datatype == 'league' || 'teams'" src={{item.logo}} alt={{item.name}}>
-<h1 *ngIf="datatype == 'country'">{{item.country}}</h1>
-<h1 *ngIf="datatype == 'league' || 'teams'">{{item.name}}</h1>
+<div (click)="navigateToNext(datatype)" >
+    <img *ngIf="datatype == 'country'" src={{item.flag}} alt={{item.country}}>
+    <img  *ngIf="datatype == 'league' || 'teams'" src={{item.logo}} alt={{item.name}}>
+    <h1 *ngIf="datatype == 'country'">{{item.country}}</h1>
+    <h1 *ngIf="datatype == 'league' || 'teams'">{{item.name}}</h1>
+</div>

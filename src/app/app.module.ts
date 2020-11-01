@@ -42,7 +42,7 @@ registerLocaleData(localeFr, 'fr');
     ShotsComponent,
     ShotsTeamComponent,
     HomeMatchCardComponent,
-    HomePageComponent
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
