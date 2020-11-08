@@ -29,7 +29,7 @@ export class MatchService {
     return this.http.get<any>(environment.api + '/matchByDate/' + date).pipe(catchError(this.handleError));
   }
   getMatchesByDateAndLeague(date, leagueID): Observable<any>{
-    return this.http.get<any>(environment.api + '/matchByDateAndLeague/' + date +'/' + leagueID ).pipe(catchError(this.handleError));
+    return this.http.get<any>(environment.api + '/matchByDateAndLeague/' + date + '/' + leagueID ).pipe(catchError(this.handleError));
   }
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
