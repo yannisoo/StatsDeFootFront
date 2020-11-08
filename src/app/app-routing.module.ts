@@ -12,7 +12,7 @@ const routes: Routes = [
   { path: 'countries/:country/:ID_leagues/teams', component: ComparativeSearchComponent },
   { path: 'stats-match/:match', component: StatsMatchComponent },
   { path: 'compare/:ID_team1/:ID_team2', component: ComparativeMatchHistoryComponent },
-  { path: 'card', component: HomePageComponent}
+  { path: '', component: HomePageComponent}
 ];
 
 @NgModule({
