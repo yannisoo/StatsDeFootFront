@@ -1,3 +1,6 @@
-<div class="container">
-    <app-home-match-card [match]='match' *ngFor="let match of matches"></app-home-match-card>
+<div class="holder">
+    <app-sidebar [fields]='leagues' (function)='activateFilter($event)'></app-sidebar>
+    <div class="container">
+        <app-home-match-card [match]='match' *ngFor="let match of matches"></app-home-match-card>
+    </div>
 </div>

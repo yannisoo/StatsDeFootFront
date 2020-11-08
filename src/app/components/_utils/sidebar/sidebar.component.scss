@@ -1,0 +1,15 @@
+.sidebar{
+    height:100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left:0;
+    background-color: grey;
+    overflow: hidden;
+}
+.block{
+    height:100%;
+    display: block;
+    width:300px;
+}
