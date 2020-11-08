@@ -7,10 +7,12 @@ import { StatsMatchComponent } from './components/stats-match/stats-match.compon
 import { HomePageComponent } from './components/home/home-page/home-page.component';
 
 const routes: Routes = [
-    { path: '', component: ComparativeSearchComponent },
-    { path: 'stats-match/:match', component: StatsMatchComponent },
-    { path: 'compare/:ID_team1/:ID_team2', component: ComparativeMatchHistoryComponent },
-    { path: 'card', component: HomePageComponent}
+  { path: 'countries', component: ComparativeSearchComponent },
+  { path: 'countries/:country/leagues', component: ComparativeSearchComponent },
+  { path: 'countries/:country/:ID_leagues/teams', component: ComparativeSearchComponent },
+  { path: 'stats-match/:match', component: StatsMatchComponent },
+  { path: 'compare/:ID_team1/:ID_team2', component: ComparativeMatchHistoryComponent },
+  { path: '', component: HomePageComponent}
 ];
 
 @NgModule({

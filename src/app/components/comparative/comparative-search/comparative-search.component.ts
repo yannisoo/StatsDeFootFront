@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { CountryService } from '../../../services/country.service';
 import { LeagueService } from '../../../services/league.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-comparative-search',
@@ -15,12 +16,15 @@ export class ComparativeSearchComponent implements OnInit {
   currentDatatype;
   // Pays stocké
   stagecountries;
+  // League stocké
+  stageleagues;
   // Equipe N°1
   team1;
 
   resettable;
 
   constructor(
+    private route: ActivatedRoute,
     private countryService: CountryService,
     private leagueService: LeagueService,
     private router: Router
@@ -29,46 +33,48 @@ export class ComparativeSearchComponent implements OnInit {
 
 
   ngOnInit(): void {
-    // appel du service pour récuperer les pays
-    this.countryService.getAll().subscribe((response) => {
-      // stockage des pays dans une variable pour ne pas les recharger une deuxieme fois
-      this.stagecountries = response;
-      this.stageData(this.stagecountries.countries, this.stagecountries.datatype);
-    });
-  }
-  callNextItem(item){
-    // dans le cas on nous sommes sur un jeu de donnée pays appel des leagues correspondante
-    if (this.currentDatatype === 'country'){
-      this.leagueService.getLeaguesByCountry(item.country).subscribe((response) => {
+    const country = this.route.snapshot.params.country;
+    const leagueId = this.route.snapshot.params.ID_leagues;
+
+    if (country && !leagueId) {
+      this.leagueService.getLeaguesByCountry(country).subscribe((response) => {
+        this.stageleagues = response;
         this.stageData(response.leagues, response.datatype);
       });
-    }
-    // dans le cas on nous sommes sur un jeu de donnée league appel des équipes correspondante
-    if (this.currentDatatype === 'league'){
-      this.leagueService.getTeamsByLeague(item.league_id).subscribe((response) => {
+    } else if (country && leagueId) {
+      // dans le cas on nous sommes sur un jeu de donnée league appel des équipes correspondante
+      this.leagueService.getTeamsByLeague(leagueId).subscribe((response) => {
         this.stageData(response.teams, response.datatype);
       });
+    } else {
+      // appel du service pour récuperer les pays
+      this.countryService.getAll().subscribe((response) => {
+        // stockage des pays dans une variable pour ne pas les recharger une deuxieme fois
+        this.stagecountries = response;
+        this.stageData(this.stagecountries.countries, this.stagecountries.datatype);
+      });
     }
-     // dans le cas on nous sommes sur un jeu de donnée équipe ajout de cet équipe a la séléction
-     // puis retour a la liste des pays pour selectioné la deuxieme équipe
-    if (this.currentDatatype === 'team') {
+
+    const team1 = JSON.parse(localStorage.getItem('team1'));
+    if (team1) {
+      this.team1 = team1;
+    }
+  }
+  compare(item) {
+    if (item.team_id) {
       if (this.team1) {
         this.router.navigate(['/compare/' + this.team1.team_id + '/' + item.team_id]);
+        localStorage.removeItem('team1');
       } else {
-        this.team1 = item;
+        localStorage.setItem('team1', JSON.stringify(item));
+        this.router.navigate(['/countries']);
       }
-      this.stageData(this.stagecountries.countries, this.stagecountries.datatype);
     }
   }
-
-  // change les données d'affichage selon les données recupéré
-  stageData(staged, type){
-      this.currentData = staged;
-      this.currentDatatype = type;
+  stageData(staged, type) {
+    this.currentData = staged;
+    this.currentDatatype = type;
   }
-
-
-
   resetTeamSelected() {
     this.team1 = null;
     this.resettable = false;
