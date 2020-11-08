@@ -23,6 +23,7 @@ import { ShotsTeamComponent } from './components/statistics/shots/shots-team/sho
 import { HomeMatchCardComponent } from './components/home/home-match-card/home-match-card.component';
 import { HomePageComponent } from './components/home/home-page/home-page.component';
 import { SidebarComponent } from './components/_utils/sidebar/sidebar.component';
+import { HeaderComponent } from './components/_utils/header/header.component';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -44,7 +45,8 @@ registerLocaleData(localeFr, 'fr');
     ShotsTeamComponent,
     HomeMatchCardComponent,
     HomePageComponent,
-    SidebarComponent
+    SidebarComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
