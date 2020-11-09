@@ -1,4 +1,6 @@
-<div class="team">
+<div class="team"
+[ngClass]="{MatchPreviewCardComponent: component_parent === 'MatchPreviewCardComponent'}" 
+>
     <img src={{team.logo}} alt="{{team.name}}">
     <p>{{team.name}}</p>
 </div>

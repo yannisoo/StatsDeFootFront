@@ -22,6 +22,7 @@ export class ComparativeMatchHistoryComponent implements OnInit {
   firstTeamHistory;
   // team 2 match history
   secondTeamHistory;
+  component = 'ComparativeMatchHistoryComponent';
 
   constructor(
     private route: ActivatedRoute,

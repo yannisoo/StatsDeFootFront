@@ -11,14 +11,17 @@
 .teams{
     display: flex;
     justify-content: space-around;
+    padding: 1%;
 
 }
 .first-team, .second-team{
     display: flex;
     flex-direction: column;
+    width: 30%;
 }
 p{
     text-align: center;
+    font-size: 20px;
 }
 .btn-reset{
     width: 5%;
@@ -27,7 +30,27 @@ p{
 .scoreboard{
     display: flex;
     flex-direction: row;
-    width: 50%;
+    width: 40%;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-end;
+    padding-bottom: 30px;
+    div p{
+        font-size: 30px;
+    }
+}
+@media only screen and (max-width: 625px) {
+    .teams{
+        align-items: center;
+    }
+    .scoreboard{
+        align-items: center;
+        padding-bottom: 0;
+        div{
+            flex-direction: column;
+        }
+    }
+    svg{
+        height: 30px;
+        width: 30px;
+    }
 }

@@ -1,7 +1,50 @@
 .team{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    img, p{
+        margin: 10px;
+    }
+    img{
+        height: 50%;
+        width: 50%;
+        margin: auto;
+    }
+    p{
+        text-align: center;
+        font-size: 25px;
+    }
 }
-p{
-    text-align: center;
+
+// Style : in MatchPreviewCardComponent
+.MatchPreviewCardComponent{
+    img{
+        height: 80px;
+        width: 80px;
+    }
+    p{
+        display: none;
+    }
+}
+@media only screen and (max-width: 625px) {
+    p{
+        font-size: 10px;
+    }
+    .team{
+        display: flex;
+        flex-direction: column;
+        img, p{
+            margin: auto;
+        }
+        img{
+        height: 90px;
+            width: 90px;
+        }
+    }
+    // Style : in MatchPreviewCardComponent
+
+    .MatchPreviewCardComponent img{
+        height: 40px;
+        width: 40px;
+    }   
 }

@@ -28,3 +28,8 @@ li{
     list-style-type: none;
     margin-right: 10%;
 }
+@media only screen and (max-width: 625px) {
+    a{
+        font-size: 10px;
+    }
+}

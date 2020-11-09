@@ -9,7 +9,8 @@ import { Router } from '@angular/router';
 export class MatchPreviewCardComponent implements OnInit {
 
   @Input() match;
-
+  @Input() component_parent;
+  component = 'MatchPreviewCardComponent'
   constructor(
     private router: Router
   ) { }

@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class TeamInfoComponent implements OnInit {
 
   @Input() team;
+  @Input() component_parent;
 
   constructor() { }
 
