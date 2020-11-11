@@ -10,6 +10,7 @@ export class MatchPreviewCardComponent implements OnInit {
 
   @Input() match;
   @Input() component_parent;
+  @Input() past__matches;
   component = 'MatchPreviewCardComponent'
   constructor(
     private router: Router

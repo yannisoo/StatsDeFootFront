@@ -14,6 +14,10 @@ export class ComparativeMatchHistoryComponent implements OnInit {
   secondTeam;
   // matches shown to users
   currentMatches;
+  // futur matches
+  futurMatches = [];
+  // past matches
+  pastMatches = [];
   // both teams info displayed in the menu
   menu;
   // both teams match history
@@ -52,6 +56,15 @@ export class ComparativeMatchHistoryComponent implements OnInit {
       });
       this.match.getLast5Matches(IDteam2).subscribe((responseT2) => {
         this.secondTeamHistory = responseT2.fixtures;
+      });
+      let now = new Date
+      this.currentMatches.forEach(element => {
+        let match_date = new Date(element.event_timestamp * 1000)
+        if (match_date < now) {
+          this.pastMatches.push(element)
+        } else {
+          this.futurMatches.push(element)
+        }
       });
     });
 

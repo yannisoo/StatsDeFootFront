@@ -1,5 +1,11 @@
 <app-comparative-card  [firstTeamSelected]="firstTeam" [secondTeamSelected]="secondTeam"></app-comparative-card>
 <app-comparative-match-history-menu [team]="menu" (changeCurrentMatches)="changeCurrentMatches($event)"></app-comparative-match-history-menu>
 <div>
-    <app-match-preview-card [component_parent]="component" [match]='item' *ngFor="let item of currentMatches"></app-match-preview-card>
+    <h2>Prochains matchs</h2>
+    <app-match-preview-card [component_parent]="component" [match]='item' *ngFor="let item of futurMatches"></app-match-preview-card>
+</div>
+<hr>
+<div>
+    <h2>Precédents matchs</h2>
+    <app-match-preview-card [component_parent]="component" [past__matches]="true" [match]='item' *ngFor="let item of pastMatches"></app-match-preview-card>
 </div>
