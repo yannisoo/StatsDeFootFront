@@ -57,15 +57,17 @@ export class ComparativeMatchHistoryComponent implements OnInit {
       this.match.getLast5Matches(IDteam2).subscribe((responseT2) => {
         this.secondTeamHistory = responseT2.fixtures;
       });
-      let now = new Date
+      // trie entre match passés et futures
+      const now = new Date();
       this.currentMatches.forEach(element => {
-        let match_date = new Date(element.event_timestamp * 1000)
-        if (match_date < now) {
-          this.pastMatches.push(element)
-        } else {
-          this.futurMatches.push(element)
+        const matchDate = new Date(element.event_timestamp * 1000);
+        if (matchDate < now) {
+          this.pastMatches.push(element);
+        } else if (element.status !== 'Match Cancelled' && element.status !== 'Time to be defined') {
+          this.futurMatches.push(element);
         }
       });
+      this.futurMatches.reverse();
     });
 
   }

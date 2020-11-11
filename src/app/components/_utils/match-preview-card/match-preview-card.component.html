@@ -1,11 +1,11 @@
 <div class="block"
 [ngClass]="{
-    ComparativeMatchHistoryComponent: component_parent === 'ComparativeMatchHistoryComponent',
-    past__matches: past__matches == true
+    ComparativeMatchHistoryComponent: componentParent === 'ComparativeMatchHistoryComponent',
+    pastMatches: pastMatches == true
 }"
 *ngIf="match.status != 'Match Cancelled' && match.status != 'Time to be defined'" (click)='OpenAMatch(match.fixture_id)'
 >
-    <app-team-info [component_parent]="component" [team]="match.homeTeam"></app-team-info>
+    <app-team-info [componentParent]="component" [team]="match.homeTeam"></app-team-info>
     <div class="informations">
         <div class="scores" *ngIf="match.status == 'Match Finished' ">
             <p>{{match.goalsHomeTeam}} - {{match.goalsAwayTeam}}</p>
@@ -17,5 +17,5 @@
             <p>{{match.event_date | date }}</p>
         </div>
     </div>
-    <app-team-info [component_parent]="component" [team]="match.awayTeam"></app-team-info>
+    <app-team-info [componentParent]="component" [team]="match.awayTeam"></app-team-info>
 </div>
