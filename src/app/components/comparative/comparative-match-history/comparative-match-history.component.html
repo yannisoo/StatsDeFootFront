@@ -1,4 +1,5 @@
 <app-comparative-card  [firstTeamSelected]="firstTeam" [secondTeamSelected]="secondTeam"></app-comparative-card>
+<app-matches-average [matches]="currentMatches"></app-matches-average>
 <app-comparative-match-history-menu [team]="menu" (changeCurrentMatches)="changeCurrentMatches($event)"></app-comparative-match-history-menu>
 <div>
     <h2 *ngIf="futurMatches.length > 0">Prochains matchs</h2>
