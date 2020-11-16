@@ -9,6 +9,11 @@
 app-home-match-card{
     padding: 12.5px;
     width: 450px;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.05) ;
+        transition: 300ms;
+    }
 }
 @media only screen and (max-width: 625px) {
     app-home-match-card{

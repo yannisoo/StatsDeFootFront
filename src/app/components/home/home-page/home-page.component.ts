@@ -16,7 +16,8 @@ export class HomePageComponent implements OnInit {
     { name: 'Serie A', value: '2857', shown: true},
     { name: 'Bundesligua', value: '2755', shown: true},
     { name: 'Primera division', value: '2833', shown: true},
-    { name: 'UEFA Champions League', value: '2020', shown: true}];
+    { name: 'UEFA Champions League', value: '2020', shown: true},
+    { name: 'league one', value: '2803', shown: true}];
 
   // date used for getting matches
   date;
@@ -44,7 +45,6 @@ export class HomePageComponent implements OnInit {
         }
       }
     });
-    console.log(this.leagues);
   }
 
   async chooseDay(date){
@@ -55,7 +55,6 @@ export class HomePageComponent implements OnInit {
             // set data to list of matches shown
               this.matches = this.matches.concat(response.fixtures);
               this.stagedMatches = this.matches;
-              console.log(this.matches);
             });
         });
 
