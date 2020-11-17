@@ -1,4 +1,4 @@
-<div class="team">
+<div class="team" [ngClass]="{possessionPass: componentParent == 'PossessionPassComponent'}">
     <img src={{team.logo}} alt="{{team.name}}">
     <p>{{team.name}}</p>
 </div>

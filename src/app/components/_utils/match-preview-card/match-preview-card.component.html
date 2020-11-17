@@ -2,7 +2,7 @@
     <app-team-info [team]="match.homeTeam"></app-team-info>
     <div class="informations">
         <div class="scores" *ngIf="match.status == 'Match Finished' ">
-            <p>{{match.goalsHomeTeam}} / {{match.goalsAwayTeam}}</p>
+            <p>{{match.goalsHomeTeam}} - {{match.goalsAwayTeam}}</p>
         </div>
         <div class="statut">
             <p *ngIf="match.status == 'Not Started'"> Bientot</p>

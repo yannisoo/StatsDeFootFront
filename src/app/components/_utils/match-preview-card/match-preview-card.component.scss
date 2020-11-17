@@ -4,6 +4,11 @@
     flex-direction: row;
     justify-content: space-around;
     padding: 3% 0;
+    .informations{
+        p{
+            font-size: 1.5em;
+        }
+    }
 }
 
 p{
