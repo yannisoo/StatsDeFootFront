@@ -1,6 +1,6 @@
 <div class="block"
 [ngClass]="{
-    ComparativeMatchHistoryComponent: componentParent === 'ComparativeMatchHistoryComponent',
+    comparativeMatchHistoryComponent: componentParent === 'ComparativeMatchHistoryComponent',
     pastMatches: pastMatches == true
 }"
 *ngIf="match.status != 'Match Cancelled' && match.status != 'Time to be defined'" (click)='OpenAMatch(match.fixture_id)'

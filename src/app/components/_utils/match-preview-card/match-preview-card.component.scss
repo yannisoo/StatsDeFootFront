@@ -18,7 +18,7 @@ span{
     flex-direction: column;
     justify-content: center;
 }
-.ComparativeMatchHistoryComponent{
+.comparativeMatchHistoryComponent{
     align-items: center;
     margin: 8px auto;
     border-radius: 40px 40px 40px 40px;
@@ -36,11 +36,11 @@ span{
         -webkit-border-radius: 10px 10px 10px 10px;
         border: 0px solid #000000;
         .scores, .date p{
-            font-size: 25px;
+            font-size: 1.8em;
         }
     }
 }
-.ComparativeMatchHistoryComponent.pastMatches:hover{
+.comparativeMatchHistoryComponent.pastMatches:hover{
     opacity: 0.5;
     width:95%;
     transition: 0.2s;
@@ -49,6 +49,6 @@ span{
 }
 @media only screen and (max-width: 625px) {
     .date p, .scores{
-        font-size: 15px;
+        font-size: 1em;
     }
 }

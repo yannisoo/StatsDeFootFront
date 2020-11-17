@@ -12,12 +12,12 @@
     }
     p{
         text-align: center;
-        font-size: 25px;
+        font-size: 1.7em;
     }
 }
 
 // Style : in MatchPreviewCardComponent
-.MatchPreviewCardComponent{
+.matchPreviewCardComponent{
     img{
         height: 80px;
         width: 80px;
@@ -28,7 +28,7 @@
 }
 @media only screen and (max-width: 625px) {
     p{
-        font-size: 10px;
+        font-size: 1.7em;
     }
     .team{
         display: flex;
@@ -43,7 +43,7 @@
     }
     // Style : in MatchPreviewCardComponent
 
-    .MatchPreviewCardComponent img{
+    .matchPreviewCardComponent img{
         height: 40px;
         width: 40px;
     }   
