@@ -1,0 +1,15 @@
+.container{
+    padding: 20px;
+    h2{
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    p{
+        text-align: center;
+        font-size: 1.5em;
+    }
+    .stats{
+        display: flex;
+        justify-content: space-around;
+    }
+}
