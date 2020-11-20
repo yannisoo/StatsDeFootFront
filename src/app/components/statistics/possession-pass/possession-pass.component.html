@@ -1,36 +1,42 @@
 <div class="container">
-    <h3>Possession de Balle</h3>
-    <div class="possession-container">
-        <div class="left-possession">
-            <app-team-info [team]="data.homeTeam"></app-team-info>
-            <p>{{this.statistics['Ball Possession'].home}}</p>
+    <div>
+        <div class="container-title">
+            <h3>Possession de Balle</h3>
         </div>
-        <div class="chart-container" style="position: relative;">
-            <canvas id="possession"></canvas>
+        <div class="possession-container">
+            <div class="left-possession">
+                <app-team-info [componentParent]="PossessionPassComponent" [team]="data.homeTeam"></app-team-info>
+                <p class="possession">{{this.statistics['Ball Possession'].home}}</p>
+            </div>
+            <div class="chart-container" style="position: relative;">
+                <canvas id="possession"></canvas>
+            </div>
+            <div class="right-possession">
+                <app-team-info [componentParent]="PossessionPassComponent" [team]="data.awayTeam"></app-team-info>
+                <p class="possession">{{this.statistics['Ball Possession'].away}}</p>
+            </div>   
         </div>
-        <div class="right-possession">
-            <app-team-info [team]="data.awayTeam"></app-team-info>
-            <p>{{this.statistics['Ball Possession'].away}}</p>
-        </div>   
     </div>
-    <h3>Passes Réussis</h3>
-    <div class="passes-container">
-        <div class="passes-container-value">
-            <div class="left-passes">
-                <p>{{data.homeTeam.team_name}}</p>
-                <p>{{this.statistics['Passes accurate'].home}} / {{this.statistics['Total passes'].home}}</p>
+    <div>
+        <h3>Passes Réussis</h3>
+        <div class="passes-container">
+            <div class="passes-container-value">
+                <div class="left-passes">
+                    <p>{{data.homeTeam.team_name}}</p>
+                    <p>{{this.statistics['Passes accurate'].home}} / {{this.statistics['Total passes'].home}}</p>
+                </div>
+                <div class="right-passes">
+                    <p>{{data.awayTeam.team_name}}</p>
+                    <p>{{this.statistics['Passes accurate'].away}} / {{this.statistics['Total passes'].away}}</p>
+                </div>
             </div>
-            <div class="right-passes">
-                <p>{{data.awayTeam.team_name}}</p>
-                <p>{{this.statistics['Passes accurate'].away}} / {{this.statistics['Total passes'].away}}</p>
-            </div>
-        </div>
-        <div class="bar">
-            <div class="homeBar" [style.width]="passesHome + '%'">
-                <p>{{this.statistics['Passes %'].home}}</p>
-            </div>
-            <div class="awayBar" [style.width]="passesAway + '%'">
-                <p>{{this.statistics['Passes %'].away}}</p>
+            <div class="bar">
+                <div class="homeBar" [style.width]="passesHome + '%'">
+                    <p>{{this.statistics['Passes %'].home}}</p>
+                </div>
+                <div class="awayBar" [style.width]="passesAway + '%'">
+                    <p>{{this.statistics['Passes %'].away}}</p>
+                </div>
             </div>
         </div>
     </div>

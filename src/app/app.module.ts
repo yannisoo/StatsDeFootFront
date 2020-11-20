@@ -24,6 +24,7 @@ import { HomeMatchCardComponent } from './components/home/home-match-card/home-m
 import { HomePageComponent } from './components/home/home-page/home-page.component';
 import { SidebarComponent } from './components/_utils/sidebar/sidebar.component';
 import { HeaderComponent } from './components/_utils/header/header.component';
+import { MatchesAverageComponent } from './components/comparative/comparative-match-history/matches-average/matches-average.component';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -46,7 +47,8 @@ registerLocaleData(localeFr, 'fr');
     HomeMatchCardComponent,
     HomePageComponent,
     SidebarComponent,
-    HeaderComponent
+    HeaderComponent,
+    MatchesAverageComponent
   ],
   imports: [
     BrowserModule,

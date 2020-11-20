@@ -4,6 +4,11 @@
     flex-direction: row;
     justify-content: space-around;
     padding: 3% 0;
+    .informations{
+        p{
+            font-size: 1.5em;
+        }
+    }
 }
 
 p{
@@ -17,4 +22,38 @@ span{
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.comparativeMatchHistoryComponent{
+    align-items: center;
+    margin: 8px auto;
+    border-radius: 40px 40px 40px 40px;
+    -moz-border-radius: 40px 40px 40px 40px;
+    -webkit-border-radius: 40px 40px 40px 40px;
+    border: 5px solid #4C4746;
+    transition: 0.2s;
+    -webkit-box-shadow: 0px 15px 10px -5px rgba(0,0,0,0.46);
+    -moz-box-shadow: 0px 15px 10px -5px rgba(0,0,0,0.46);
+    box-shadow: 0px 15px 10px -5px rgba(0,0,0,0.46);
+    height: 30px;
+    .informations{
+        border-radius: 10px 10px 10px 10px;
+        -moz-border-radius: 10px 10px 10px 10px;
+        -webkit-border-radius: 10px 10px 10px 10px;
+        border: 0px solid #000000;
+        .scores, .date p{
+            font-size: 1.8em;
+        }
+    }
+}
+.comparativeMatchHistoryComponent.pastMatches:hover{
+    opacity: 0.5;
+    width:95%;
+    transition: 0.2s;
+    transition-timing-function: ease;
+    cursor: pointer;
+}
+@media only screen and (max-width: 625px) {
+    .date p, .scores{
+        font-size: 1em;
+    }
 }

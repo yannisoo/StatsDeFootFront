@@ -15,6 +15,7 @@ export class PossessionPassComponent implements OnChanges {
   chart = Array<Chart>(10);
   passesHome;
   passesAway;
+  PossessionPassComponent = 'PossessionPassComponent';
 
 
 
