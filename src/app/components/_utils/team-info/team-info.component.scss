@@ -1,7 +1,56 @@
 .team{
     display: flex;
     flex-direction: column;
+    align-items: center;
+    img, p{
+        margin: 10px;
+    }
+    img{
+        height: 50%;
+        width: 50%;
+        margin: auto;
+    }
+    p{
+        text-align: center;
+        font-size: 1.7em;
+    }
 }
-p{
-    text-align: center;
+// Style : in PossessionPassComponent
+.possessionPassComponent{
+    p{
+        display: none;
+    }
+}
+
+// Style : in MatchPreviewCardComponent
+.matchPreviewCardComponent{
+    img{
+        height: 80px;
+        width: 80px;
+    }
+    p{
+        display: none;
+    }
+}
+@media only screen and (max-width: 625px) {
+    p{
+        font-size: 1.7em;
+    }
+    .team{
+        display: flex;
+        flex-direction: column;
+        img, p{
+            margin: auto;
+        }
+        img{
+        height: 90px;
+            width: 90px;
+        }
+    }
+    // Style : in MatchPreviewCardComponent
+
+    .matchPreviewCardComponent img{
+        height: 40px;
+        width: 40px;
+    }   
 }

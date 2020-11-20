@@ -1,5 +1,5 @@
 .container{
-    width:100vw;
+    width:100%;
     height: 20vh;
     background-color: lightgray;
     border-bottom: 1px solid;
@@ -27,4 +27,12 @@ ul{
 li{
     list-style-type: none;
     margin-right: 10%;
+}
+@media only screen and (max-width: 625px) {
+    a{
+        font-size: 0.8em;
+    }
+    .container{
+        padding: 0.3em;
+    }
 }

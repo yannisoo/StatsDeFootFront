@@ -14,6 +14,10 @@ export class ComparativeMatchHistoryComponent implements OnInit {
   secondTeam;
   // matches shown to users
   currentMatches;
+  // futur matches
+  futurMatches = [];
+  // past matches
+  pastMatches = [];
   // both teams info displayed in the menu
   menu;
   // both teams match history
@@ -22,6 +26,7 @@ export class ComparativeMatchHistoryComponent implements OnInit {
   firstTeamHistory;
   // team 2 match history
   secondTeamHistory;
+  component = 'ComparativeMatchHistoryComponent';
 
   constructor(
     private route: ActivatedRoute,
@@ -52,26 +57,56 @@ export class ComparativeMatchHistoryComponent implements OnInit {
       this.match.getLast5Matches(IDteam2).subscribe((responseT2) => {
         this.secondTeamHistory = responseT2.fixtures;
       });
+      // trie entre match passés et futures
+      const now = new Date();
+      this.currentMatches.forEach(element => {
+        const matchDate = new Date(element.event_timestamp * 1000);
+        if (matchDate < now) {
+          this.pastMatches.push(element);
+        } else if (element.status !== 'Match Cancelled' && element.status !== 'Time to be defined') {
+          this.futurMatches.push(element);
+        }
+      });
+      this.futurMatches.reverse();
     });
 
   }
 
-  changeCurrentMatches(id){
+  changeCurrentMatches(id) {
+    this.futurMatches = [];
+    this.pastMatches = [];
+    document.getElementById('firstTeam').style.display = 'none';
+    document.getElementById('secondTeam').style.display = 'none';
     // Created a 3 choice switch to change the data loaded
     switch (id){
       // Case 0: change to history of team 1
       case 0:
         this.currentMatches = this.firstTeamHistory;
+        document.getElementById('firstTeam').style.display = '';
         break;
       // Case 1: change to history of both teams
       case 1:
         this.currentMatches = this.mixedHistory;
+        document.getElementById('firstTeam').style.display = '';
+        document.getElementById('secondTeam').style.display = '';
         break;
       // Case 2: change to history of team 2
       case 2:
         this.currentMatches = this.secondTeamHistory;
+        document.getElementById('secondTeam').style.display = '';
         break;
     }
+    // trie entre matchs passés et futures
+    const now = new Date();
+    this.currentMatches.forEach(element => {
+      const matchDate = new Date(element.event_timestamp * 1000);
+      if (matchDate < now) {
+        this.pastMatches.push(element);
+      } else if (element.status !== 'Match Cancelled' && element.status !== 'Time to be defined') {
+        this.futurMatches.push(element);
+      }
+    });
+    this.futurMatches.reverse();
   }
 
 }
