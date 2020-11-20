@@ -1,7 +1,7 @@
 .holder{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
 }
 .container{
     display:flex;
@@ -9,7 +9,7 @@
     height: 100%;
 }
 app-home-match-card{
-    padding: 12.5px;
+    padding: 3%;
     width: 450px;
     &:hover {
         cursor: pointer;
