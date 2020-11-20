@@ -4,9 +4,9 @@
             <img *ngIf="datatype == 'country'" src={{item.flag}} alt={{item.country}}>
             <img  *ngIf="datatype == 'league' || 'teams'" src={{item.logo}} alt={{item.name}}>
         </div>
-        <div class="text">
-            <h1 *ngIf="datatype == 'country'">{{item.country}}</h1>
-            <h1 *ngIf="datatype == 'league' || 'teams'">{{item.name}}</h1>
+        <div class="text" style="display:flex;justify-content:center;align-items:center">
+            <p *ngIf="datatype == 'country'">{{item.country}}</p>
+            <h2 *ngIf="datatype == 'league' || 'teams'">{{item.name}}</h2>
         </div>
     </div>
 </div>
