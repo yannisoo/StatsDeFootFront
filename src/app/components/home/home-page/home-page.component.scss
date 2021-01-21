@@ -1,7 +1,9 @@
 .holder{
     width: 100%;
+    margin-left: 300px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 .container{
     display:flex;
