@@ -1,0 +1,22 @@
+
+
+<div class="container">
+    <div>
+        <div class="container-title">
+            <h3>Pourcentage de passe réussis</h3>
+        </div>
+        <div class="possession-container">
+            <div class="left-possession">
+                <app-team-info [componentParent]="PossessionPassComponent" [team]="data.homeTeam"></app-team-info>
+                <p class="possession">{{this.statistics['Passes accurate'].home}} / {{this.statistics['Total passes'].home}}</p>
+            </div>
+            <div class="chart-container" style="position: relative;">
+                <canvas id="possession"></canvas>
+            </div>
+            <div class="right-possession">
+                <app-team-info [componentParent]="PossessionPassComponent" [team]="data.awayTeam"></app-team-info>
+                <p class="possession">{{this.statistics['Passes accurate'].away}} / {{this.statistics['Total passes'].away}}</p>
+            </div>   
+        </div>
+    </div>
+</div>
