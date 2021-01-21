@@ -67,7 +67,7 @@ export class HomePageComponent implements OnInit {
     this.chooseDay(this.date);
   }
   activateFilter(selected){
-    if(this.filterOn === true){
+    if (this.filterOn === true){
       this.leagues.forEach(league => {
         if (league.value === selected.value) {
           league.shown = !league.shown;
@@ -80,7 +80,7 @@ export class HomePageComponent implements OnInit {
         }
       });
     }
-    if(this.filterOn === false){
+    if (this.filterOn === false){
       this.leagues.forEach(league => {
         if (league.value === selected.value) {
             league.shown = true;
@@ -89,7 +89,7 @@ export class HomePageComponent implements OnInit {
         this.filterOn = true;
       });
     }
-    
+
   }
 
   async chooseDay(date){
@@ -100,7 +100,6 @@ export class HomePageComponent implements OnInit {
             // set data to list of matches shown
               this.matches = this.matches.concat(response.fixtures);
               this.stagedMatches = this.matches;
-              console.log(this.matches)
             });
         });
         // this.match.getMatchesByDate(date).subscribe((response) => {

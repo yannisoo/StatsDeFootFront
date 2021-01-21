@@ -5,7 +5,7 @@
     </div>
     <div class="card-stats">
         <div class="event yellow-card">
-            <img width="60" height="100" src="https://www.flaticon.com/svg/static/icons/svg/1031/1031434.svg" alt="">
+            <img  *ngFor="let i of array" width="60" height="100" src="https://www.flaticon.com/svg/static/icons/svg/1031/1031434.svg" alt="">
             <p>{{this.team.yellow_card}}</p>
         </div>
         <div class="event red-card">

@@ -74,7 +74,7 @@ export class ComparativeSearchComponent implements OnInit {
   stageData(staged, type) {
     this.currentData = staged;
     this.currentDatatype = type;
-    console.log(this.currentData)
+    console.log(this.currentData);
   }
   resetTeamSelected() {
     this.team1 = null;
