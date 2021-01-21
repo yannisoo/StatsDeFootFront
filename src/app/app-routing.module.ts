@@ -1,15 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { RechercheComparatifComponent } from './recherche-comparatif/recherche-comparatif.component';
-import { MatchHistoryComparativeComponent } from './match-history-comparative/match-history-comparative.component';
-import { PossessionPassComponent } from './components/statistics/possession-pass/possession-pass.component';
-import { StatsMatchComponent } from './stats-match/stats-match.component';
+import { ComparativeSearchComponent } from './components/comparative/comparative-search/comparative-search.component';
+import { ComparativeMatchHistoryComponent } from './components/comparative/comparative-match-history/comparative-match-history.component';
+import { StatsMatchComponent } from './components/stats-match/stats-match.component';
+import { HomePageComponent } from './components/home/home-page/home-page.component';
 
 const routes: Routes = [
-    { path: '', component: RechercheComparatifComponent },
-    { path: 'stats-match/:match', component: StatsMatchComponent },
-    { path: 'compare/:ID_team1/:ID_team2', component: MatchHistoryComparativeComponent }
+  { path: 'countries', component: ComparativeSearchComponent },
+  { path: 'countries/:country/leagues', component: ComparativeSearchComponent },
+  { path: 'countries/:country/:ID_leagues/teams', component: ComparativeSearchComponent },
+  { path: 'stats-match/:match', component: StatsMatchComponent },
+  { path: 'compare/:ID_team1/:ID_team2', component: ComparativeMatchHistoryComponent },
+  { path: '', component: HomePageComponent}
 ];
 
 @NgModule({

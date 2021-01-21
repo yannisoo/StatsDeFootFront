@@ -1,0 +1,13 @@
+<nav>
+    <ul class="menuItems">
+        <li>
+            <a (click)='changeCurrentMatches.emit(0)'> Matchs de {{team[0].name}}</a>
+        </li>
+        <li>
+            <a (click)='changeCurrentMatches.emit(1)'>Matchs en commun</a>   
+        </li>
+        <li>
+            <a (click)='changeCurrentMatches.emit(2)' > Matchs de {{team[1].name}}</a>
+        </li>
+    </ul>
+</nav>  

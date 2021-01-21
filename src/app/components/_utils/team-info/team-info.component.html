@@ -1,0 +1,8 @@
+<div class="team" [ngClass]="{
+    possessionPassComponent: componentParent == 'PossessionPassComponent',
+    matchPreviewCardComponent: componentParent === 'MatchPreviewCardComponent'
+}">
+
+    <img src={{team.logo}} alt="{{team.name}}">
+    <p>{{team.name}}</p>
+</div>

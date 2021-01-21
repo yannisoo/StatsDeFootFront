@@ -1,0 +1,38 @@
+.container{
+    justify-content: center;
+    // background:url('/assets/pics/background-shots.jpg') center;
+    background-size: cover;
+    margin: auto;
+    border: 1px solid;
+    width: 100%;
+    border-radius: 30px 30px 30px 30px;
+    -moz-border-radius: 30px 30px 30px 30px;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    border: 10px solid #000000;
+    -webkit-box-shadow: 0px 15px 20px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 15px 20px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 15px 20px 0px rgba(0,0,0,0.75);
+    .container-title{
+        background-color: #D6CBCB;
+        border-radius: 20px 20px 0px 0px;
+        height: 40px;
+        align-items: center;
+        h3{
+            text-align: center;
+            font-size: 2em;
+        }
+    }
+}
+.container div{
+    display: flex;
+    justify-content: space-evenly;
+}
+h1{
+    text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+    .container div{
+        flex-wrap: wrap;
+    }
+}

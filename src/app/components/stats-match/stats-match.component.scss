@@ -1,0 +1,41 @@
+.container{
+    margin-top: 50px;
+    display: flex;
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+
+    .first-line{
+        display: flex;
+        height: 500px;
+    }
+    .second-line{
+        display: flex;
+        height: 500px;
+    }
+}
+app-fouls, app-possession-pass, app-shots{
+    width: 600px;
+    margin: auto;
+}
+@media only screen and (max-width: 600px) {
+    .container, .first-line, .second-line{
+        display: flex;
+        flex-direction: column;
+    }
+    .container{
+        justify-content: space-around;
+        .first-line{
+            height: 100%;
+        }
+        app-possession-pass, app-fouls{
+            margin:5px 0px;
+        }
+    }
+    .first-line, .second-line{
+        margin: 5px;
+    }
+    app-fouls, app-possession-pass, app-shots{
+        width: 100%;
+    }
+}

@@ -1,0 +1,13 @@
+.container{
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.item{
+    width: 200px;
+    display: block;
+    flex-direction: column;
+    margin: 5% 0;
+}

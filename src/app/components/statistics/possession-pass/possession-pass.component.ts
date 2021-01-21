@@ -15,6 +15,7 @@ export class PossessionPassComponent implements OnChanges {
   chart = Array<Chart>(10);
   passesHome;
   passesAway;
+  PossessionPassComponent = 'PossessionPassComponent';
 
 
 
@@ -24,15 +25,16 @@ export class PossessionPassComponent implements OnChanges {
   ) { }
 
   ngOnChanges(): void {
+    // Verify that we have the data
+    if (this.statistics && this.data){
     // Stats Creation when we get Data from parent
     this.possessionBall();
     this.passesAccuracy();
   }
+  }
 
 
   possessionBall(){
-    // Verify that we have the data
-    if (this.statistics && this.data){
       // Transform  the data in usable data for chart
       const possessionHome = this.statistics['Ball Possession'].home.replace('%', '');
       const possessionAway = this.statistics['Ball Possession'].away.replace('%', '');
@@ -58,7 +60,7 @@ export class PossessionPassComponent implements OnChanges {
         },
         options,
       });
-    }
+
   }
 
 passesAccuracy(){

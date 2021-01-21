@@ -1,0 +1,6 @@
+<app-comparative-card  [firstTeamSelected]="team1" ></app-comparative-card>
+<div class='container' >
+    <div *ngFor="let item of currentData" (click)="compare(item)">
+        <app-item class='item'  [datatype]='currentDatatype' [item]='item' ></app-item>
+    </div>
+</div>
