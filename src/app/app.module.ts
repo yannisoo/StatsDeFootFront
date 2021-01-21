@@ -25,6 +25,8 @@ import { HomePageComponent } from './components/home/home-page/home-page.compone
 import { SidebarComponent } from './components/_utils/sidebar/sidebar.component';
 import { HeaderComponent } from './components/_utils/header/header.component';
 import { MatchesAverageComponent } from './components/comparative/comparative-match-history/matches-average/matches-average.component';
+import { SearchBarComponent } from './components/_utils/search-bar/search-bar.component';
+import { PourcentagePassComponent } from './components/statistics/pourcentage-pass/pourcentage-pass.component';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -48,7 +50,9 @@ registerLocaleData(localeFr, 'fr');
     HomePageComponent,
     SidebarComponent,
     HeaderComponent,
-    MatchesAverageComponent
+    MatchesAverageComponent,
+    SearchBarComponent,
+    PourcentagePassComponent
   ],
   imports: [
     BrowserModule,

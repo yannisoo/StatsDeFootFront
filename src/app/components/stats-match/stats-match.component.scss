@@ -1,6 +1,6 @@
 .container{
-    margin-top: 50px;
     display: flex;
+    background: url("../../../assets/pics/wp3183523.jpg") ;
     width: 100vw;
     flex-direction: column;
     justify-content: center;
@@ -14,7 +14,7 @@
         height: 500px;
     }
 }
-app-fouls, app-possession-pass, app-shots{
+app-fouls, app-possession-pass, app-shots, app-pourcentage-pass{
     width: 600px;
     margin: auto;
 }
