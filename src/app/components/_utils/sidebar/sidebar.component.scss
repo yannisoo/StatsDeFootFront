@@ -2,19 +2,12 @@
     height: 100%;
     width: 300px;
     position: fixed;
-    z-index: -20;
     padding-top: 20vh;
     top:0;
     left:0;
     background-color: grey;
     overflow: auto;
-}
-.block{
-    display:flex;
-    height:100%;
-    width:300px;
-    z-index: -1000;
-    overflow: auto;
+    z-index:0
 }
 .item{
     display: block;
