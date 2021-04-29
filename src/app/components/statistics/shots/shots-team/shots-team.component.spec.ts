@@ -19,7 +19,5 @@ describe('ShotsTeamComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+
 });

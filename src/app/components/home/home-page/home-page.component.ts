@@ -66,6 +66,7 @@ export class HomePageComponent implements OnInit {
     this.date = formatDate(new Date(), 'yyyy-MM-dd', 'en');
     this.chooseDay(this.date);
   }
+  
   activateFilter(selected){
     if (this.filterOn === true){
       this.leagues.forEach(league => {

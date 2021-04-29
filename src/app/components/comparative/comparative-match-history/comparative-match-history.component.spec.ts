@@ -1,25 +1,23 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComparativeMatchHistoryComponent } from './comparative-match-history.component';
 
-import { MatchHistoryComparativeComponent } from './match-history-comparative.component';
 
 describe('MatchHistoryComparativeComponent', () => {
-  let component: MatchHistoryComparativeComponent;
-  let fixture: ComponentFixture<MatchHistoryComparativeComponent>;
+  let component: ComparativeMatchHistoryComponent;
+  let fixture: ComponentFixture<ComparativeMatchHistoryComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MatchHistoryComparativeComponent ]
+      declarations: [ ComparativeMatchHistoryComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(MatchHistoryComparativeComponent);
+    fixture = TestBed.createComponent(ComparativeMatchHistoryComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+
 });

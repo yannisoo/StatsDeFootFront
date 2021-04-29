@@ -19,7 +19,5 @@ describe('FoulsTeamComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+
 });

@@ -1,10 +1,10 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
-import { RechercheComparatifComponent } from './recherche-comparatif.component';
+import { ComparativeSearchComponent } from './comparative-search.component';
 
-describe('RechercheComparatifComponent', () => {
-  let component: RechercheComparatifComponent;
-  let fixture: ComponentFixture<RechercheComparatifComponent>;
+describe('ComparativeSearchComponent', () => {
+  let component: ComparativeSearchComponent;
+  let fixture: ComponentFixture<ComparativeSearchComponent>;
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -15,18 +15,16 @@ describe('RechercheComparatifComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RechercheComparatifComponent ]
+      declarations: [ ComparativeSearchComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RechercheComparatifComponent);
+    fixture = TestBed.createComponent(ComparativeSearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+
 });

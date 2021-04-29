@@ -1,11 +1,10 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from '../../app.component';
-import { ItemComponent } from './item.component';
+import { ComparativeSearchItemComponent } from './comparative-search-item.component';
 
-describe('ItemComponent', () => {
-  let component: ItemComponent;
-  let fixture: ComponentFixture<ItemComponent>;
+describe('ComparativeSearchItemComponent', () => {
+  let component: ComparativeSearchItemComponent;
+  let fixture: ComponentFixture<ComparativeSearchItemComponent>;
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
@@ -15,13 +14,13 @@ describe('ItemComponent', () => {
   }));
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ItemComponent ]
+      declarations: [ ComparativeSearchItemComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ItemComponent);
+    fixture = TestBed.createComponent(ComparativeSearchItemComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
