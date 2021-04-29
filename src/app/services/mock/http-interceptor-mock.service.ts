@@ -144,8 +144,6 @@ export class HttpInterceptorMockService implements HttpInterceptor {
     Observable<HttpEvent<any>> {
     if (request.url && request.url
       .indexOf(environment.api + '/matchByDateAndLeague/' + this.date + '/2833') > -1) {
-      console.log('laa')
-      console.log(stagedMatches)
       return of(new HttpResponse({ status: 200, body: stagedMatches }));
     }
 
