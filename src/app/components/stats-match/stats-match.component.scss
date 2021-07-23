@@ -1,22 +1,52 @@
+p{
+    font-family: 'Prompt', sans-serif;
+}
+.stats-match-nav{
+    border-top: solid #014023;
+    border-bottom: solid #014023;
+    display: flex;
+    justify-content: space-around;
+    height: 4.6875em;
+    line-height: 4.6875em;
+    div:nth-child(2){
+        background-color: #E6ECE9;
+    }
+    div {
+        width: 33%;
+        text-align: center;
+        font-size: 0.9375em;
+        font-family: 'Prompt',
+            sans-serif;
+
+    }
+}
 .container{
     display: flex;
-    background: url("../../../assets/pics/wp3183523.jpg") ;
     width: 100vw;
     flex-direction: column;
     justify-content: center;
-
-    .first-line{
-        display: flex;
-        height: 500px;
+    p{
+        font-size: 1.25em;
     }
-    .second-line{
+    .title{
         display: flex;
-        height: 500px;
+        justify-content: center;
+        height: 6.875em;
+        padding: 2.875em 0;
+        margin: 0.625em 0;
+        p{
+            margin: 0 0.375em;
+            line-height: 3.875em;
+        }
+    }
+    .first-line, .second-line{
+           margin: 0.625em 0;
     }
 }
 app-fouls, app-possession-pass, app-shots, app-pourcentage-pass{
     width: 600px;
     margin: auto;
+    margin: 0.625em 0;
 }
 @media only screen and (max-width: 600px) {
     .container, .first-line, .second-line{
