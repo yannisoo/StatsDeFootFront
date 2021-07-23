@@ -12,25 +12,27 @@
     }
     p{
         text-align: center;
-        font-size: 1.7em;
+        font-size: 0.9375em;
+        font-family: 'Prompt',
+        sans-serif;
     }
 }
 // Style : in PossessionPassComponent
 .possessionPassComponent{
-    p{
-        display: none;
-    }
+    // p{
+    //     display: none;
+    // }
 }
 
 // Style : in MatchPreviewCardComponent
 .matchPreviewCardComponent{
     img{
-        height: 80px;
-        width: 80px;
+        height: 7.3em;
+        width: 7.3em;
     }
-    p{
-        display: none;
-    }
+    // p{
+    //     display: none;
+    // }
 }
 @media only screen and (max-width: 625px) {
     p{
