@@ -1,18 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
 .container{
-    width:100%; 
+    width:100%;
+    display: flex;
+    justify-content: space-between;
     z-index: 30000;
     height: 20vh;
-    background-color: lightgray;
-    border-bottom: 1px solid;
-    border-color: rgb(106, 105, 105);
+    box-shadow:0 0 4px #000000;
 }
-
+.logo{
+    height:10vh;
+    margin-left: 5%; 
+    margin-top: 5vh;
+}
 .nav{
     margin: auto 5%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    font-family: 'Overpass', sans-serif;
+    color: #014023;
 }
 
 a{
