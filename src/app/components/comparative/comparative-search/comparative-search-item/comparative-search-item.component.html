@@ -1,12 +1,10 @@
 <div class="container">
     <div class="card" (click)="navigateToNext(datatype)" >
         <div class="img">
-            <img *ngIf="datatype == 'country'" src={{item.flag}} alt={{item.country}}>
-            <img  *ngIf="datatype == 'league' || 'teams'" src={{item.logo}} alt={{item.name}}>
+            <img *ngIf="datatype == 'country'" src={{item.flag}}>
         </div>
         <div class="text">
             <h1 *ngIf="datatype == 'country'">{{item.country}}</h1>
-            <h1 *ngIf="datatype == 'league' || 'teams'">{{item.name}}</h1>
         </div>
     </div>
 </div>
