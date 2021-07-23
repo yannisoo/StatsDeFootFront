@@ -1,13 +1,14 @@
 .container{
-    width: 80vw;
-    margin: auto;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    padding: 5%;
+    padding-top: auto;
 }
 .item{
     width: 200px;
     display: block;
     flex-direction: column;
-    margin: 5% 0;
+    margin: 15%;
 }
