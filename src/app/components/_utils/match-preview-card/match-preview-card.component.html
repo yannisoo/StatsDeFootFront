@@ -7,10 +7,12 @@
 >
     <app-team-info [componentParent]="component" [team]="match.homeTeam"></app-team-info>
     <div class="informations">
-        <p>{{match.goalsHomeTeam}} </p>
-        <div *ngIf="match.status == 'Match Finished' " ><p>Terminé</p></div>
-        <div *ngIf="match.status == 'Not Started' " ><p>Bientot</p></div>
-        <p>{{match.goalsAwayTeam}}</p>
+        <p *ngIf="match.status != 'Not Started' ">
+            {{match.goalsHomeTeam}}
+                - 
+            {{match.goalsAwayTeam}}
+        </p>
+        <p class="date">{{formatedDate}}</p>
     </div>
     <app-team-info [componentParent]="component" [team]="match.awayTeam"></app-team-info>
 </div>

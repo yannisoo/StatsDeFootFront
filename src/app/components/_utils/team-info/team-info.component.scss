@@ -1,7 +1,6 @@
 .team{
     display: flex;
     flex-direction: column;
-    align-items: center;
     img, p{
         margin: 10px;
     }
@@ -19,20 +18,14 @@
 }
 // Style : in PossessionPassComponent
 .possessionPassComponent{
-    // p{
-    //     display: none;
-    // }
 }
 
 // Style : in MatchPreviewCardComponent
 .matchPreviewCardComponent{
+    width: 9.75em;
     img{
-        height: 7.3em;
-        width: 7.3em;
+        width: 4.5625em;
     }
-    // p{
-    //     display: none;
-    // }
 }
 @media only screen and (max-width: 625px) {
     p{
