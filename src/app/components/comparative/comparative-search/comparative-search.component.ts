@@ -26,6 +26,8 @@ export class ComparativeSearchComponent implements OnInit {
 
   resettable;
 
+  showItem = false;
+
   constructor(
     private route: ActivatedRoute,
     private countryService: CountryService,
@@ -38,6 +40,9 @@ export class ComparativeSearchComponent implements OnInit {
   ngOnInit(): void {
     const country = this.route.snapshot.params.country;
     const leagueId = this.route.snapshot.params.ID_leagues;
+    this.team1 = JSON.parse(localStorage.getItem('team1'));
+    this.team1 ? this.showItem = true : this.showItem = false;
+    console.log(this.team1)
 
     if (country && !leagueId) {
       this.leagueService.getLeaguesByCountry(country).subscribe((response) => {
@@ -57,12 +62,8 @@ export class ComparativeSearchComponent implements OnInit {
         this.stageData(this.stagecountries.countries, this.stagecountries.datatype);
       });
     }
-
-    const team1 = JSON.parse(localStorage.getItem('team1'));
-    if (team1) {
-      this.team1 = team1;
-    }
   }
+
   compare(item) {
     if (item.team_id) {
       if (this.team1) {
@@ -77,7 +78,6 @@ export class ComparativeSearchComponent implements OnInit {
   stageData(staged, type) {
     this.currentData = staged;
     this.currentDatatype = type;
-    console.log(this.currentDatatype)
     /*this.currentData = [
       {
       flag: "assets/pics/france.png",
@@ -140,7 +140,6 @@ export class ComparativeSearchComponent implements OnInit {
       name: "Ligue 1"
     }
   ];*/
-    console.log(this.currentData);
   }
   resetTeamSelected() {
     this.team1 = null;
