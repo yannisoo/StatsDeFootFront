@@ -72,70 +72,8 @@ export class ComparativeSearchComponent implements OnInit {
     }
   }
   stageData(staged, type) {
-    this.currentData = [
-      {
-      flag: "assets/pics/france.png",
-      country: "France",
-      logo: "",
-      name: "Ligue 1"
-    },
-    {
-      flag: "assets/pics/france.png",
-      country: "France",
-      logo: "",
-      name: "Ligue 1"
-    },
-    {
-      flag: "assets/pics/france.png",
-      country: "France",
-      logo: "",
-      name: "Ligue 1"
-    },
-    {
-      flag: "assets/pics/france.png",
-      country: "France",
-      logo: "",
-      name: "Ligue 1"
-    },
-    {
-      flag: "assets/pics/france.png",
-      country: "France",
-      logo: "",
-      name: "Ligue 1"
-    },
-    {
-      flag: "assets/pics/france.png",
-      country: "France",
-      logo: "",
-      name: "Ligue 1"
-    },
-    {
-      flag: "assets/pics/france.png",
-      country: "France",
-      logo: "",
-      name: "Ligue 1"
-    },
-    {
-      flag: "assets/pics/france.png",
-      country: "France",
-      logo: "",
-      name: "Ligue 1"
-    },
-    {
-      flag: "assets/pics/france.png",
-      country: "France",
-      logo: "",
-      name: "Ligue 1"
-    },
-    {
-      flag: "assets/pics/france.png",
-      country: "France",
-      logo: "",
-      name: "Ligue 1"
-    }
-  ];
-    this.currentDatatype = 'country';
-    console.log(this.currentData);
+    this.currentData = staged;
+    this.currentDatatype = type;
   }
   resetTeamSelected() {
     this.team1 = null;

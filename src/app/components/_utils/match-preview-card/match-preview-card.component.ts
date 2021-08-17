@@ -12,14 +12,11 @@ export class MatchPreviewCardComponent implements OnInit {
   @Input() componentParent;
   @Input() pastMatches;
   component = 'MatchPreviewCardComponent';
-  formatedDate;
   constructor(
     private router: Router
   ) { }
 
   ngOnInit(): void {
-    var date = new Date(this.match.event_timestamp * 1000);
-    this.formatedDate = date.getDay() + ' / ' + date.getMonth() + ' / ' + date.getFullYear();
   }
   OpenAMatch(id){
     this.router.navigate(['/stats-match/' + id ]);
