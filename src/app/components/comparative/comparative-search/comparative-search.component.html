@@ -1,6 +1,24 @@
 <app-comparative-card  [firstTeamSelected]="team1" ></app-comparative-card>
-<div class='container' >
+<div class="search">
+    <div class="itemSelected" *ngIf="currentDatatype == 'league' || 'teams' &&  currentDatatype != 'undefinied'">
+        <p>LALALALALLALAL</p>
+        <div class="card">
+            <div class="img">
+                <img src={{itemSelected.logo}} alt={{itemSelected.name}}>
+            </div>
+            <div class="text">
+                <h1>{{itemSelected.name}}</h1>
+            </div>
+        </div>
+    </div>
+    <div class="icon">
+        <input type="text" placeholder="Toutes les équipes">
+        <img src="assets/pics/loupe.png" alt="search-icon">
+    </div>
+    <div class="line"></div>
+</div>
+<div class='container'>
     <div *ngFor="let item of currentData" (click)="compare(item)">
-        <app-item class='item'  [datatype]='currentDatatype' [item]='item' ></app-item>
+        <app-item class='item'  [datatype]='currentDatatype' [item]='item' (newItemEvent)="addItemSelected($event)" ></app-item>
     </div>
 </div>

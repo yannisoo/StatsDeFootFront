@@ -12,6 +12,9 @@ import { ActivatedRoute } from '@angular/router';
 export class ComparativeSearchComponent implements OnInit {
   // données affiché a un instant T
   currentData;
+
+  itemSelected;
+
   // type des données affiché a un instant T
   currentDatatype;
   // Pays stocké
@@ -72,7 +75,10 @@ export class ComparativeSearchComponent implements OnInit {
     }
   }
   stageData(staged, type) {
-    this.currentData = [
+    this.currentData = staged;
+    this.currentDatatype = type;
+    console.log(this.currentDatatype)
+    /*this.currentData = [
       {
       flag: "assets/pics/france.png",
       country: "France",
@@ -133,12 +139,15 @@ export class ComparativeSearchComponent implements OnInit {
       logo: "",
       name: "Ligue 1"
     }
-  ];
-    this.currentDatatype = 'country';
+  ];*/
     console.log(this.currentData);
   }
   resetTeamSelected() {
     this.team1 = null;
     this.resettable = false;
+  }
+
+  addItemSelected(value) {
+    this.itemSelected = value;
   }
 }
