@@ -1,5 +1,5 @@
 <div class="container">
-    <app-sidebar [fields]='leagues' (function)='activateFilter($event)'></app-sidebar>
+    <!-- <app-sidebar [fields]='leagues' (function)='activateFilter($event)'></app-sidebar> -->
     <div class="holder" *ngIf="matches !== []">
         <app-home-match-card  [match]='match' *ngFor="let match of matches" (click)='findMatch(match.homeTeam.team_id, match.awayTeam.team_id)'></app-home-match-card>
     </div>

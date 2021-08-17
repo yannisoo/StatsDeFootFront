@@ -12,39 +12,7 @@ export class HomePageComponent implements OnInit {
 
   // values used
   leagues = [
-    { name: 'Ligue 1 Uber Eats', value: 2664, shown: false},
-    { name: 'Primera division', value: 2833, shown: false},
-    { name: 'UEFA Champions League', value: 2020, shown: false},
-    { name: 'league one', value: 2803, shown: false},
-    { name: 'Ligue 2 BKT', value: 2652, shown: false},
-    { name: 'Coupe de France', value: 2652, shown: false},
-    { name: 'LaLiga Smartbank', value: 2847, shown: false},
-    { name: 'Copa Del Rey', value: 3046, shown: false},
-    { name: 'Premier League', value: 2790, shown: false},
-    { name: 'Championship', value: 2794, shown: false},
-    { name: 'FA Cup', value: 2781, shown: false},
-    { name: 'Serie A', value: 2857, shown: false},
-    { name: 'Serie B', value: 2946, shown: false},
-    { name: 'Coppa Italia', value: 2941, shown: false},
-    { name: 'Bundesliga', value: 2755, shown: false},
-    { name: '2e Bundesliga', value: 2781, shown: false},
-    { name: 'DFB-Pokal', value: 2677, shown: false},
-    { name: 'Bundesligua', value: 2755, shown: false},
-    { name: 'UEFA Champions League', value: 2771, shown: false},
-    { name: 'UEFA Europa League', value: 2777, shown: false},
-    { name: 'Eredisivie', value: 2673, shown: false},
-    { name: 'Liga NOS', value: 2826, shown: false},
-    { name: 'Jupiler Pro League', value: 2660, shown: false},
-    { name: 'Premier-Liga', value: 2679, shown: false},
-    { name: 'Süper Lig', value: 2816, shown: false},
-    { name: 'Super League', value: 2855, shown: false},
-    { name: 'Premier-Liha', value: 2762, shown: false},
-    { name: 'Superleague Elláda', value: 2874, shown: false},
-    { name: 'UEFA Euro Championship', value: 403, shown: false},
-    { name: 'UEFA Nations League', value: 1422, shown: false},
-    { name: 'Copa America', value: 1321, shown: false},
-    { name: 'CAN', value: 1030, shown: false},
-    { name: 'Amicaux', value: 1324, shown: false}
+    { name: '2e Bundesliga', value: 2781, shown: false}
   ];
 
   // date used for getting matches

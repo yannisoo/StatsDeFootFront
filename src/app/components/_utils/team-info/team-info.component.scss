@@ -1,7 +1,6 @@
 .team{
     display: flex;
     flex-direction: column;
-    align-items: center;
     img, p{
         margin: 10px;
     }
@@ -12,24 +11,20 @@
     }
     p{
         text-align: center;
-        font-size: 1.7em;
+        font-size: 0.9375em;
+        font-family: 'Prompt',
+        sans-serif;
     }
 }
 // Style : in PossessionPassComponent
 .possessionPassComponent{
-    p{
-        display: none;
-    }
 }
 
 // Style : in MatchPreviewCardComponent
 .matchPreviewCardComponent{
+    width: 9.75em;
     img{
-        height: 80px;
-        width: 80px;
-    }
-    p{
-        display: none;
+        width: 4.5625em;
     }
 }
 @media only screen and (max-width: 625px) {
