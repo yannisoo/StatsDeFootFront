@@ -12,6 +12,9 @@ import { ActivatedRoute } from '@angular/router';
 export class ComparativeSearchComponent implements OnInit {
   // données affiché a un instant T
   currentData;
+
+  itemSelected;
+
   // type des données affiché a un instant T
   currentDatatype;
   // Pays stocké
@@ -22,6 +25,8 @@ export class ComparativeSearchComponent implements OnInit {
   team1;
 
   resettable;
+
+  showItem = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -35,6 +40,9 @@ export class ComparativeSearchComponent implements OnInit {
   ngOnInit(): void {
     const country = this.route.snapshot.params.country;
     const leagueId = this.route.snapshot.params.ID_leagues;
+    this.team1 = JSON.parse(localStorage.getItem('team1'));
+    this.team1 ? this.showItem = true : this.showItem = false;
+    console.log(this.team1)
 
     if (country && !leagueId) {
       this.leagueService.getLeaguesByCountry(country).subscribe((response) => {
@@ -54,12 +62,8 @@ export class ComparativeSearchComponent implements OnInit {
         this.stageData(this.stagecountries.countries, this.stagecountries.datatype);
       });
     }
-
-    const team1 = JSON.parse(localStorage.getItem('team1'));
-    if (team1) {
-      this.team1 = team1;
-    }
   }
+
   compare(item) {
     if (item.team_id) {
       if (this.team1) {
@@ -74,9 +78,14 @@ export class ComparativeSearchComponent implements OnInit {
   stageData(staged, type) {
     this.currentData = staged;
     this.currentDatatype = type;
+
   }
   resetTeamSelected() {
     this.team1 = null;
     this.resettable = false;
+  }
+
+  addItemSelected(value) {
+    this.itemSelected = value;
   }
 }

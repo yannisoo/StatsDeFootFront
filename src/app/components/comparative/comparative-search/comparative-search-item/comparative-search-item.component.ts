@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,12 +10,21 @@ export class ComparativeSearchItemComponent implements OnInit {
   @Input() item;
   @Input() datatype;
 
+  @Output() newItemEvent = new EventEmitter<string>();
+
+  itemSelected;
+
 
   constructor(
     private router: Router
   ) { }
   ngOnInit(): void {
   }
+
+  addItemSelected(item) {
+      this.newItemEvent.emit(item);
+  }
+
   navigateToNext(datatype) {
     switch (datatype) {
       case 'country':
