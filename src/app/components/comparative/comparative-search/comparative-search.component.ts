@@ -23,6 +23,8 @@ export class ComparativeSearchComponent implements OnInit {
   stageleagues;
   // Equipe N°1
   team1;
+  // filtré
+  filtered
 
   resettable;
 
@@ -75,10 +77,92 @@ export class ComparativeSearchComponent implements OnInit {
       }
     }
   }
+
+  filter(data){
+    this.filtered = this.currentData;
+    var type = this.currentDatatype
+    if (data.target.value) {
+      data = data.target.value;
+      this.filtered = this.filtered.filter(function (ele, i, array) {
+        console.log(ele)
+
+
+        if ( type === "country" ) {
+          var arrayelement = ele.country.toLowerCase()
+        }else{
+          var arrayelement = ele.name.toLowerCase()
+        }
+        return arrayelement.includes(data)
+      })
+    }
+  }
+  
   stageData(staged, type) {
     this.currentData = staged;
     this.currentDatatype = type;
-
+    this.filter(this.currentData);
+    /*this.currentData = [
+      {
+      flag: "assets/pics/france.png",
+      country: "France",
+      logo: "",
+      name: "Ligue 1"
+    },
+    {
+      flag: "assets/pics/france.png",
+      country: "France",
+      logo: "",
+      name: "Ligue 1"
+    },
+    {
+      flag: "assets/pics/france.png",
+      country: "France",
+      logo: "",
+      name: "Ligue 1"
+    },
+    {
+      flag: "assets/pics/france.png",
+      country: "France",
+      logo: "",
+      name: "Ligue 1"
+    },
+    {
+      flag: "assets/pics/france.png",
+      country: "France",
+      logo: "",
+      name: "Ligue 1"
+    },
+    {
+      flag: "assets/pics/france.png",
+      country: "France",
+      logo: "",
+      name: "Ligue 1"
+    },
+    {
+      flag: "assets/pics/france.png",
+      country: "France",
+      logo: "",
+      name: "Ligue 1"
+    },
+    {
+      flag: "assets/pics/france.png",
+      country: "France",
+      logo: "",
+      name: "Ligue 1"
+    },
+    {
+      flag: "assets/pics/france.png",
+      country: "France",
+      logo: "",
+      name: "Ligue 1"
+    },
+    {
+      flag: "assets/pics/france.png",
+      country: "France",
+      logo: "",
+      name: "Ligue 1"
+    }
+  ];*/
   }
   resetTeamSelected() {
     this.team1 = null;
