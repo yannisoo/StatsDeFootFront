@@ -11,13 +11,13 @@
             </div>
         </div>
         <div class="icon">
-            <input type="text" placeholder="Toutes les équipes">
+            <input type="text" placeholder="Recherches" (input)="filter($event)">
             <img src="assets/pics/loupe.png" alt="search-icon">
         </div>
         <div class="line"></div>
     </div>
     <div class='container'>
-        <div *ngFor="let item of currentData" (click)="compare(item)">
+        <div *ngFor="let item of filtered" (click)="compare(item)">
             <app-item class='item'  [datatype]='currentDatatype' [item]='item' (newItemEvent)="addItemSelected($event)" ></app-item>
         </div>
     </div>
