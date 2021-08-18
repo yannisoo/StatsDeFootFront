@@ -1,6 +1,16 @@
 <div class="container">
     <!-- <app-sidebar [fields]='leagues' (function)='activateFilter($event)'></app-sidebar> -->
-    <div class="holder" *ngIf="matches !== []">
+    <div class="datepicker">
+        <button (click)="changeDay(-1)">Previous</button>
+        <p>{{ date | date:"d/MM/yyyy"}}</p>
+        <button (click)="changeDay(1)">Next</button>
+    </div>
+    <div class="holder" *ngIf="isLoaded == false">
+        <mat-spinner>
+        </mat-spinner>
+    </div>
+    <div class="holder" *ngIf="matches != []">
+
         <app-home-match-card  [match]='match' *ngFor="let match of matches" (click)='findMatch(match.homeTeam.team_id, match.awayTeam.team_id)'></app-home-match-card>
     </div>
 </div>

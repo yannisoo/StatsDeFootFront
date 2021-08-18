@@ -24,16 +24,29 @@ export class HomePageComponent implements OnInit {
   // check whether filter is on or nope
   filterOn = false;
 
+  isLoaded = false;
+  tempDate;
+
   constructor(
     private match: MatchService,
     private router: Router
     ) { }
 
   ngOnInit(): void {
+    console.log(this.matches == null)
     // refactor today's date to fit the API
-    this.date = formatDate(new Date(), 'yyyy-MM-dd', 'en');
+    this.date = new Date()
     this.chooseDay(this.date);
   }
+  changeDay(value){
+    this.date = new Date(
+      this.date.getFullYear(),
+      this.date.getMonth(),
+      this.date.getDate() + value);
+    console.log(this.date)
+    this.chooseDay(this.date)
+  }
+
   activateFilter(selected){
     if (this.filterOn === true){
       this.leagues.forEach(league => {
@@ -62,19 +75,23 @@ export class HomePageComponent implements OnInit {
 
   async chooseDay(date){
         // call API with the date get all matches by date
-        this.leagues.forEach(element => {
+        // this.leagues.forEach(element => {
 
-          this.match.getMatchesByDateAndLeague(date, element.value).subscribe((response) => {
-            // set data to list of matches shown
-              this.matches = this.matches.concat(response.fixtures);
-              this.stagedMatches = this.matches;
-            });
-        });
-        // this.match.getMatchesByDate(date).subscribe((response) => {
-        //   // set data to list of matches shown
-        //     this.matches = this.matches.concat(response.fixtures);
-        //     this.stagedMatches = this.matches;
-        //   });
+        //   this.match.getMatchesByDateAndLeague(date, element.value).subscribe((response) => {
+        //     // set data to list of matches shown
+        //       this.matches = this.matches.concat(response.fixtures);
+        //       this.stagedMatches = this.matches;
+        //     });
+        // });
+        this.isLoaded = false
+        this.matches = [];
+        date = formatDate(date, 'yyyy-MM-dd', 'en')
+        this.match.getMatchesByDate(date).subscribe((response) => {
+          // set data to list of matches shown
+            this.matches = response.fixtures;
+            this.stagedMatches = this.matches;``
+            this.isLoaded = true
+          });
 
   }
   findMatch( home, away){
