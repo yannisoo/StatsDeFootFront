@@ -1,27 +1,4 @@
-.container{
-    display: flex;
-    flex-direction: column;
-    margin-top: 20%;
-}
-.container div{
-    margin: 20px;
-}
-p{
-    text-align: center;
-    font-weight: bold;
-}
-.shots-group{
-    display: flex;
-    flex-direction: row;
-}
-.shots-group div{
-    margin: 5px 6px;
-}
-.title{
-    font-weight: bold;
-    font-size: 2em;
-}  
-
-.number{
-    font-size: 1.9em;
+canvas{
+    height: 18.25em;
+    width: 29.5em;
 }

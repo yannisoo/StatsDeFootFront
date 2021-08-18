@@ -1,9 +1,9 @@
 <div class="container">
-    <div class="container-title">
-        <h1>Tirs</h1>
-    </div>
-    <div>
+    <p class="shot-container-title">Tirs</p>
+    <div class="shot-container">
+        <p>{{homeTeam.total_shots}}</p>
         <app-shots-team  [team]="homeTeam"></app-shots-team>
         <app-shots-team [team]="awayTeam"></app-shots-team>
+        <p>{{awayTeam.total_shots}}</p>
     </div>
 </div>

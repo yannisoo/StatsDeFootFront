@@ -1,13 +1,5 @@
-<nav>
-    <ul class="menuItems">
-        <li>
-            <a (click)='changeCurrentMatches.emit(0)'> Matchs de {{team[0].name}}</a>
-        </li>
-        <li>
-            <a (click)='changeCurrentMatches.emit(1)'>Matchs en commun</a>   
-        </li>
-        <li>
-            <a (click)='changeCurrentMatches.emit(2)' > Matchs de {{team[1].name}}</a>
-        </li>
-    </ul>
-</nav>  
+<div class="container">
+    <div (click)='changeCurrentMatches.emit(0)' (click)="select(1)" [ngClass]="{'selected': team_1_selected === 1}"><a> Matchs de {{team[0].name}}</a></div>
+    <div (click)='changeCurrentMatches.emit(1)' (click)="select(2)" [ngClass]="{'selected': common_selected === 1}"><a> Matchs en commun</a></div>
+    <div (click)='changeCurrentMatches.emit(2)' (click)="select(3)" [ngClass]="{'selected': team_2_selected === 1}"><a (click)='changeCurrentMatches.emit(2)'> Matchs de {{team[1].name}}</a></div>
+</div>
