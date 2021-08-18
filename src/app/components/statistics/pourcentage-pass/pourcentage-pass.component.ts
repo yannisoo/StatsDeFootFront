@@ -15,6 +15,8 @@ export class PourcentagePassComponent implements OnInit {
   passesHome;
   passesAway;
   PossessionPassComponent = 'PossessionPassComponent';
+  possessionHome;
+  possessionAway;
 
   constructor(
     private  route: ActivatedRoute,
@@ -28,6 +30,8 @@ export class PourcentagePassComponent implements OnInit {
   }
 
   possessionBall(){
+    this.possessionHome = Math.round((this.statistics['Passes accurate'].home/this.statistics['Total passes'].home)*100).toFixed(1);
+    this.possessionAway = Math.round((this.statistics['Passes accurate'].away/this.statistics['Total passes'].away)*100).toFixed(1);
     // Transform  the data in usable data for chart
     const possessionHome = this.statistics['Passes %'].home.replace('%', '');
     const possessionAway = this.statistics['Passes %'].away.replace('%', '');

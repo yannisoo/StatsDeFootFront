@@ -2,18 +2,18 @@
     <p class="posssession-title">Possessions</p>
     <div class="possession-container">
         <div class="container-title">
-            <p>{{this.statistics['Passes %'].home}}</p>
+            <p>{{this.statistics['Ball Possession'].home}}</p>
         </div>
         <div class="bar">
             <div class="homeBar" [style.width]="passesHome + '%'">
-                <p>{{this.statistics['Passes %'].home}}</p>
+                <p>{{this.statistics['Ball Possession'].home}}</p>
             </div>
-            <div class="awayBar" [style.width]="passesAway + '%'">
-                <p>{{this.statistics['Passes %'].away}}</p>
+            <div class="awayBar" [style.width]="passesAway+1 + '%'">
+                <p>{{this.statistics['Ball Possession'].away}}</p>
             </div>
         </div>
         <div class="container-title">
-            <p>{{this.statistics['Passes %'].away}}</p>
+            <p>{{this.statistics['Ball Possession'].away}}</p>
         </div>
     </div>
 </div>   

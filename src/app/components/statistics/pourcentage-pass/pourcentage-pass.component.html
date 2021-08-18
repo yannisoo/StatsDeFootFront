@@ -1,10 +1,28 @@
 <div class="container">``
     <p class="pourcentage-pass-title">Passes réussies</p>
     <div class="pourcentage-pass-container">
-        <p>{{this.statistics['Passes accurate'].home}} / {{this.statistics['Total passes'].home}}</p>
+        <!-- <p>{{this.statistics['Passes accurate'].home}} / {{this.statistics['Total passes'].home}}</p>
          <div class="chart-container" style="position: relative;">
             <canvas id="possession"></canvas>
         </div>
-        <p>{{this.statistics['Passes accurate'].away}} / {{this.statistics['Total passes'].away}}</p>
+        <p>{{this.statistics['Passes accurate'].away}} / {{this.statistics['Total passes'].away}}</p> -->
+        <div class="homeTeam"
+        [ngClass]="{'opacity': this.statistics['Passes accurate'].away/this.statistics['Total passes'].away > this.statistics['Passes accurate'].home/this.statistics['Total passes'].home == true}">
+            <img 
+            [style.width]="possessionHome + '%'"
+            src="https://image.flaticon.com/icons/png/512/893/893913.png"
+            alt="">
+            <p>{{possessionHome}} %</p>
+        </div>
+        <div class="awayTeam"
+        [ngClass]="{'opacity': this.statistics['Passes accurate'].away/this.statistics['Total passes'].away < this.statistics['Passes accurate'].home/this.statistics['Total passes'].home == true}"
+        >
+            <img
+            [style.width]="possessionAway + '%'"
+            src="https://image.flaticon.com/icons/png/512/893/893913.png"
+            alt="">
+            <p>{{possessionAway}} %</p>
+        </div>
     </div>
+
 </div>
