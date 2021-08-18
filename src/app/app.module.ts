@@ -27,6 +27,9 @@ import { HeaderComponent } from './components/_utils/header/header.component';
 import { MatchesAverageComponent } from './components/comparative/comparative-match-history/matches-average/matches-average.component';
 import { SearchBarComponent } from './components/_utils/search-bar/search-bar.component';
 import { PourcentagePassComponent } from './components/statistics/pourcentage-pass/pourcentage-pass.component';
+import { SpinnerComponent } from './components/_utils/spinner/spinner.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 registerLocaleData(localeFr, 'fr');
@@ -52,12 +55,15 @@ registerLocaleData(localeFr, 'fr');
     HeaderComponent,
     MatchesAverageComponent,
     SearchBarComponent,
-    PourcentagePassComponent
+    PourcentagePassComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'fr' }],
   bootstrap: [AppComponent]

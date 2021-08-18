@@ -44,7 +44,6 @@ export class ComparativeSearchComponent implements OnInit {
     const leagueId = this.route.snapshot.params.ID_leagues;
     this.team1 = JSON.parse(localStorage.getItem('team1'));
     this.team1 ? this.showItem = true : this.showItem = false;
-    console.log(this.team1)
 
     if (country && !leagueId) {
       this.leagueService.getLeaguesByCountry(country).subscribe((response) => {
@@ -84,7 +83,6 @@ export class ComparativeSearchComponent implements OnInit {
     if (data.target.value) {
       data = data.target.value;
       this.filtered = this.filtered.filter(function (ele, i, array) {
-        console.log(ele)
 
 
         if ( type === "country" ) {
@@ -92,7 +90,7 @@ export class ComparativeSearchComponent implements OnInit {
         }else{
           var arrayelement = ele.name.toLowerCase()
         }
-        return arrayelement.includes(data)
+        return arrayelement.includes(data.toLowerCase())
       })
     }
   }
