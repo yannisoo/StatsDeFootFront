@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { LOCALE_ID } from '@angular/core';
-import { registerLocaleData } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/fr';
 
 import { AppComponent } from './app.component';
@@ -64,7 +64,8 @@ registerLocaleData(localeFr, 'fr');
     AppRoutingModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
-    MatIconModule
+    MatIconModule,
+    CommonModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'fr' }],
   bootstrap: [AppComponent]
