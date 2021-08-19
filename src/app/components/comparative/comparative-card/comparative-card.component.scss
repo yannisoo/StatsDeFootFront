@@ -12,6 +12,9 @@
     justify-content: space-around;
     padding: 1%;
     height: 17.6875em;
+    .head{
+        margin: 0 -20%;
+    }
     .head-futur-match{
         display: flex;
         margin: auto;
@@ -32,9 +35,16 @@
         justify-content: center;
     }
 }
-.first-team, .second-team{
+
+.first-team,
+.second-team {
     width: 30%;
-    margin: auto;
+} 
+.futurMatchFirst{
+    margin-left: 32.44755244755245vh;
+}
+.futurMatchSecond {
+    margin-right: 32.44755244755245vh;
 }
 p{
     text-align: center;

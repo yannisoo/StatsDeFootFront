@@ -1,6 +1,6 @@
 <div class="container">
     <div class="teams">
-        <div *ngIf="firstTeamSelected" class="first-team">
+        <div *ngIf="firstTeamSelected" class="first-team" [ngClass]="{'futurMatchFirst': futurMatch && !liveMatch}">
             <app-team-info [team]="firstTeamSelected"></app-team-info>
         </div>
         <div class="head-futur-match" *ngIf="futurMatch && !liveMatch">
@@ -11,7 +11,7 @@
             </div>
             <img *ngIf="secondTeamSelected.team_id === futurMatch.homeTeam.team_id" src="https://www.svgrepo.com/show/277262/stadium.svg" alt="" srcset="">
         </div>
-        <div class="head-last-match" *ngIf="lastMatch && !liveMatch && !futurMatch">
+        <div class="head head-last-match" *ngIf="lastMatch && !liveMatch && !futurMatch">
             <p class="score">
                 {{firstTeamSelected.team_id === lastMatch.homeTeam.team_id ? lastMatch.goalsHomeTeam :lastMatch.goalsAwayTeam}}
                 :
@@ -19,7 +19,7 @@
             </p>
             <p class="date">{{lastMatch.event_date | date: 'd/MM/yyyy'}}</p>
         </div>
-        <div class="head-live-match" *ngIf="liveMatch">
+        <div class="head head-live-match" *ngIf="liveMatch">
             <p class="score">
                 {{firstTeamSelected.team_id === liveMatch.homeTeam.team_id ? liveMatch.goalsHomeTeam :liveMatch.goalsAwayTeam}}
                 :
@@ -27,7 +27,7 @@
             </p>
             <p class="time">{{liveMatch.elapsed}}''</p>
         </div>
-        <div *ngIf="secondTeamSelected" class="second-team">
+        <div *ngIf="secondTeamSelected" class="second-team" [ngClass]="{'futurMatchSecond': futurMatch && !liveMatch}">
             <app-team-info [team]="secondTeamSelected"></app-team-info>
         </div>
     </div>
