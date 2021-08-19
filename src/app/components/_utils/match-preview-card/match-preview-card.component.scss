@@ -59,8 +59,7 @@ span{
     }
 }
 .comparativeMatchHistoryComponent.pastMatches:hover{
-    opacity: 0.5;
-    width:95%;
+    transform: scale(1.15);
     transition: 0.2s;
     transition-timing-function: ease;
     cursor: pointer;
