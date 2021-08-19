@@ -14,7 +14,7 @@
     <div class="holder">
         <div [ngClass]="{
             shown: field.shown == true || filterOn == false
-        }" class="item" *ngFor="let field of fields" (click)='activate(field)'> 
+        }" class="item" *ngFor="let field of list" (click)='activate(field)'> 
         <h5>{{field.name}}</h5>  
         <img src="{{field.logo}}" alt="">
     </div>
