@@ -1,12 +1,25 @@
 <app-comparative-card [HomeLastMatch]="firstTeamHistory" [AwayLastMatch]="secondTeamHistory" [liveMatch]="liveMatch" [lastMatch]="lastMatch" [futurMatch]="futurMatch"  [firstTeamSelected]="firstTeam" [secondTeamSelected]="secondTeam"></app-comparative-card>
 <!-- <app-matches-average [secondTeam]="secondTeam" [firstTeam]="firstTeam" [matches]="currentMatches"></app-matches-average> -->
-<app-comparative-match-history-menu *ngIf="menu != null" [team]="menu" (changeCurrentMatches)="changeCurrentMatches($event)"></app-comparative-match-history-menu>
-<div class="history-match">
-    <h2 *ngIf="futurMatches.length > 0">Prochains matchs</h2>
-    <app-match-preview-card [componentParent]="component" [match]='item' *ngFor="let item of futurMatches"></app-match-preview-card>
-</div>
-<hr *ngIf="futurMatches.length > 0">
-<div class="history-match">
-    <h2 *ngIf="futurMatches.length > 0" >Precédents matchs</h2>
-    <app-match-preview-card [componentParent]="component" [pastMatches]="true" [match]='item' *ngFor="let item of pastMatches"></app-match-preview-card>
-</div>
+<mat-tab-group [selectedIndex]=1 mat-stretch-tabs class="top example-stretched-tabs mat-elevation-z4">
+    <mat-tab  label="{{menu[0].name}}">
+        <div class="history-match">
+            <app-match-preview-card [componentParent]="component" [match]='item' *ngFor="let item of firstTeamHistory"></app-match-preview-card>
+        </div>
+    </mat-tab>
+    <mat-tab label="Match en commun">
+        <div class="history-match">
+            <h2 *ngIf="futurMatches.length > 0">Prochains matchs</h2>
+            <app-match-preview-card [componentParent]="component" [match]='item' *ngFor="let item of futurMatches"></app-match-preview-card>
+        </div>
+        <hr *ngIf="futurMatches.length > 0">
+        <div class="history-match">
+            <h2 *ngIf="futurMatches.length > 0" >Precédents matchs</h2>
+            <app-match-preview-card [componentParent]="component" [pastMatches]="true" [match]='item' *ngFor="let item of pastMatches"></app-match-preview-card>
+        </div>
+    </mat-tab>
+    <mat-tab label="{{menu[1].name}}">
+        <div class="history-match">
+            <app-match-preview-card [componentParent]="component" [match]='item' *ngFor="let item of firstTeamHistory"></app-match-preview-card>
+        </div>
+    </mat-tab>
+  </mat-tab-group>

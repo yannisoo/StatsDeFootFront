@@ -32,6 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatIconModule} from '@angular/material/icon';
 import { WinstreakComponent } from './components/_utils/winstreak/winstreak.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 registerLocaleData(localeFr, 'fr');
 @NgModule({
@@ -67,7 +68,8 @@ registerLocaleData(localeFr, 'fr');
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MatIconModule,
-    CommonModule
+    CommonModule,
+    MatTabsModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'fr' }],
   bootstrap: [AppComponent]

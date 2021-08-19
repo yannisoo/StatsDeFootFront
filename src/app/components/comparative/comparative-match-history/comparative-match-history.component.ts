@@ -55,6 +55,7 @@ export class ComparativeMatchHistoryComponent implements OnInit {
       this.currentMatches = this.mixedHistory;
       // set value needed in for both teams
       this.menu = response.teams;
+      console.log(this.menu)
       // call backend to recover single team history
       // included in the callback to avoid latency on first print
       this.match.getLast5Matches(IDteam1).subscribe((responseT1) => {
@@ -88,8 +89,6 @@ export class ComparativeMatchHistoryComponent implements OnInit {
   }
 
   changeCurrentMatches(id) {
-    this.futurMatches = [];
-    this.pastMatches = [];
     // document.getElementById('firstTeam').style.display = 'none';
     // document.getElementById('secondTeam').style.display = 'none';
     // Created a 3 choice switch to change the data loaded
@@ -111,25 +110,6 @@ export class ComparativeMatchHistoryComponent implements OnInit {
         // document.getElementById('secondTeam').style.display = '';
         break;
     }
-    // trie entre matchs passés et futures
-    const now = new Date();
-    this.currentMatches.forEach(element => {
-      const matchDate = new Date(element.event_timestamp * 1000);
-      if (element.statusShort === "2H" || element.statusShort === "HT" || element.statusShort === "1H") {
-        this.liveMatch = element
-      } else if (matchDate < now) {
-        this.pastMatches.push(element);
-      } else if (element.status !== 'Match Cancelled' && element.status !== 'Time to be defined') {
-        this.futurMatches.push(element);
-      }      
-    });
-    if (id === 1) {
-      this.lastMatch = this.pastMatches[0]
-      this.pastMatches = this.pastMatches.slice(1)
-      this.futurMatch = this.futurMatches[0]
-      this.futurMatches = this.futurMatches.slice(1)
-    }
-    this.futurMatches.reverse();
   }
 
 }
