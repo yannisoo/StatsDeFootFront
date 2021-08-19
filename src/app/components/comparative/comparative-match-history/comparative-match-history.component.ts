@@ -18,6 +18,12 @@ export class ComparativeMatchHistoryComponent implements OnInit {
   futurMatches = [];
   // past matches
   pastMatches = [];
+  // live match
+  liveMatch;
+  // last match
+  lastMatch;
+  // futur match
+  futurMatch;
   // both teams info displayed in the menu
   menu;
   // both teams match history
@@ -61,13 +67,22 @@ export class ComparativeMatchHistoryComponent implements OnInit {
       const now = new Date();
       this.currentMatches.forEach(element => {
         const matchDate = new Date(element.event_timestamp * 1000);
-        if (matchDate < now) {
+        if (element.statusShort === "2H" || element.statusShort === "HT" || element.statusShort === "1H") {
+          this.liveMatch = element
+        } else if (matchDate < now) {
           this.pastMatches.push(element);
         } else if (element.status !== 'Match Cancelled' && element.status !== 'Time to be defined') {
           this.futurMatches.push(element);
         }
       });
+
+      if (!this.liveMatch) {
+        this.lastMatch = this.pastMatches[0]
+        this.pastMatches = this.pastMatches.slice(1)
+      }
       this.futurMatches.reverse();
+      this.futurMatch = this.futurMatches[0]
+      this.futurMatches = this.futurMatches.slice(1)
     });
 
   }
@@ -75,37 +90,45 @@ export class ComparativeMatchHistoryComponent implements OnInit {
   changeCurrentMatches(id) {
     this.futurMatches = [];
     this.pastMatches = [];
-    document.getElementById('firstTeam').style.display = 'none';
-    document.getElementById('secondTeam').style.display = 'none';
+    // document.getElementById('firstTeam').style.display = 'none';
+    // document.getElementById('secondTeam').style.display = 'none';
     // Created a 3 choice switch to change the data loaded
     switch (id){
       // Case 0: change to history of team 1
       case 0:
         this.currentMatches = this.firstTeamHistory;
-        document.getElementById('firstTeam').style.display = '';
+        // document.getElementById('firstTeam').style.display = '';
         break;
       // Case 1: change to history of both teams
       case 1:
         this.currentMatches = this.mixedHistory;
-        document.getElementById('firstTeam').style.display = '';
-        document.getElementById('secondTeam').style.display = '';
+        // document.getElementById('firstTeam').style.display = '';
+        // document.getElementById('secondTeam').style.display = '';
         break;
       // Case 2: change to history of team 2
       case 2:
         this.currentMatches = this.secondTeamHistory;
-        document.getElementById('secondTeam').style.display = '';
+        // document.getElementById('secondTeam').style.display = '';
         break;
     }
     // trie entre matchs passés et futures
     const now = new Date();
     this.currentMatches.forEach(element => {
       const matchDate = new Date(element.event_timestamp * 1000);
-      if (matchDate < now) {
+      if (element.statusShort === "2H" || element.statusShort === "HT" || element.statusShort === "1H") {
+        this.liveMatch = element
+      } else if (matchDate < now) {
         this.pastMatches.push(element);
       } else if (element.status !== 'Match Cancelled' && element.status !== 'Time to be defined') {
         this.futurMatches.push(element);
-      }
+      }      
     });
+    if (id === 1) {
+      this.lastMatch = this.pastMatches[0]
+      this.pastMatches = this.pastMatches.slice(1)
+      this.futurMatch = this.futurMatches[0]
+      this.futurMatches = this.futurMatches.slice(1)
+    }
     this.futurMatches.reverse();
   }
 
