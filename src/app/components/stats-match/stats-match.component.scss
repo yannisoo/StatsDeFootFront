@@ -2,12 +2,12 @@ p{
     font-family: 'Prompt', sans-serif;
 }
 .stats-match-nav{
-    border-top: solid #014023;
-    border-bottom: solid #014023;
+    border-top: solid 0.1px #014023;
+    border-bottom: solid 0.1px #014023;
     display: flex;
     justify-content: space-around;
-    height: 4.6875em;
-    line-height: 4.6875em;
+    height: 130px;
+    line-height: 130px;
     div:nth-child(2){
         background-color: #E6ECE9;
     }

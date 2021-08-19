@@ -7,7 +7,7 @@
 >
     <app-team-info [componentParent]="component" [team]="match.homeTeam"></app-team-info>
     <div class="informations">
-        <p *ngIf="match.status != 'Not Started' ">
+        <p class="score" *ngIf="match.status != 'Not Started' ">
             {{match.goalsHomeTeam}}
                 - 
             {{match.goalsAwayTeam}}
