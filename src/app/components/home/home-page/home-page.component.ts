@@ -99,7 +99,7 @@ export class HomePageComponent implements OnInit {
         this.match.getMatchesByDate(date).subscribe((response) => {
           // set data to list of matches shown
             this.matches = response.fixtures;
-            this.stagedMatches = this.matches;``
+            this.stagedMatches = this.matches;
             this.isLoaded = true
             console.log(this.matches)
             this.GetLeagues()

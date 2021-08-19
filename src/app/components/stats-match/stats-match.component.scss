@@ -22,9 +22,10 @@ p{
 }
 .container{
     display: flex;
-    width: 100vw;
+    width: 60vw;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    margin: auto;r
     p{
         font-size: 1.25em;
     }
@@ -41,11 +42,11 @@ p{
     }
     .first-line, .second-line{
            margin: 0.625em 0;
+           width: 100%;
     }
 }
 app-fouls, app-possession-pass, app-shots, app-pourcentage-pass{
-    width: 600px;
-    margin: auto;
+    width: 100%;
     margin: 0.625em 0;
 }
 @media only screen and (max-width: 600px) {

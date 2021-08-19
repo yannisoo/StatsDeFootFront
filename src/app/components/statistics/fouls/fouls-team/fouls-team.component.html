@@ -1,6 +1,6 @@
 <div class="fouls-team-container">
-    <p>{{this.team.fouls}}</p>
-    <p>{{this.team.yellow_card}}</p>
-    <p>{{this.team.red_card}}</p>
-    <p>{{this.team.offside}}</p>
+    <p [style.font-size]="this.foulSize + 'px' ">{{this.team.fouls}}</p>
+    <p [style.font-size]="this.yellow_cardSize + 'px' ">{{this.team.yellow_card}}</p>
+    <p [style.font-size]="this.red_cardSize + 'px' ">{{this.team.red_card}}</p>
+    <p [style.font-size]="this.offsideSize + 'px' ">{{this.team.offside}}</p>
 </div>

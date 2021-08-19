@@ -9,7 +9,8 @@
 
 .pourcentage-pass-container {
     display: flex;
-    justify-content: space-evenly;
+    width: 100%;
+    justify-content: space-between;
     height: 10.3125em;
 }
 
@@ -52,6 +53,7 @@ img{
 
 p{
     padding-top: 10%;
+    font-size: 25px;
     text-align: center;
 }
 

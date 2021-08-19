@@ -6,8 +6,9 @@
     font-size: 1.25em;
 }
 .shot-container{
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     height: 18.75em;
     p{
         line-height: 13.75em;

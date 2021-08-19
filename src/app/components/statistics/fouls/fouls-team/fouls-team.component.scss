@@ -3,9 +3,10 @@
     display: flex;
     flex-direction: column;
     p{
-        display: block;
-        height: 6.25em;
-        line-height: 1.25em;
-        font-size: 1.25em;
+        height: 125px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

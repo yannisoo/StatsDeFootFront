@@ -5,11 +5,6 @@
     <div>Stats de {{data.awayTeam.name}}</div>
 </div>
 <div class="container">
-    <div class="title">
-        <app-team-info [componentParent]="'component'" [team]="data.homeTeam"></app-team-info>
-        <p>Statistiques des équipes</p>
-        <app-team-info [componentParent]="'component'" [team]="data.awayTeam"></app-team-info>
-    </div>
     <div class="first-line">
         <app-possession-pass *ngIf="statistics" [statistics]='statistics' [data]='data'></app-possession-pass>
         <app-fouls *ngIf="statistics" [statistics]='statistics'></app-fouls>
