@@ -12,16 +12,53 @@
     justify-content: space-around;
     padding: 1%;
     height: 17.6875em;
-
+    .head{
+        margin: 0 -20%;
+    }
+    .head-futur-match{
+        display: flex;
+        margin: auto;
+        img{
+            width: 30px;
+            height: 30px;
+            margin: auto;
+        }
+    }
+    .head-last-match{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .head-live-match{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }
-.first-team, .second-team{
+
+.first-team,
+.second-team {
     width: 30%;
-    margin: auto;
+} 
+.futurMatchFirst{
+    margin-left: 32.44755244755245vh;
+}
+.futurMatchSecond {
+    margin-right: 32.44755244755245vh;
 }
 p{
     text-align: center;
     font-size: 1.5em;
     font-family: 'Prompt', sans-serif;
+}
+.date{
+    color: #88CAD8;
+}
+.time{
+    color: #025920;
+}
+.score{
+    font-size: 3.5em;
 }
 .btn-reset{
     width: 5%;
