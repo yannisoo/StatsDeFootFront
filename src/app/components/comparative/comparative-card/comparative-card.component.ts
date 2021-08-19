@@ -11,6 +11,8 @@ export class ComparativeCardComponent implements OnChanges {
   @Input() futurMatch;
   @Input() lastMatch;
   @Input() liveMatch;
+  @Input() HomeLastMatch;
+  @Input() AwayLastMatch;
 
   @Output() resetTeamSelected = new EventEmitter();
   firstTeamSelectedVictory;

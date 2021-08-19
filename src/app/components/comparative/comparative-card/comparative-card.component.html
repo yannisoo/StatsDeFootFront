@@ -2,6 +2,7 @@
     <div class="teams">
         <div *ngIf="firstTeamSelected" class="first-team" [ngClass]="{'futurMatchFirst': futurMatch && !liveMatch}">
             <app-team-info [team]="firstTeamSelected"></app-team-info>
+            <app-winstreak [MyTeam]="firstTeamSelected.team_name" [Matches]="HomeLastMatch"></app-winstreak>
         </div>
         <div class="head-futur-match" *ngIf="futurMatch && !liveMatch">
             <img *ngIf="firstTeamSelected.team_id === futurMatch.homeTeam.team_id" src="https://www.svgrepo.com/show/277262/stadium.svg" alt="" srcset="">
@@ -29,6 +30,7 @@
         </div>
         <div *ngIf="secondTeamSelected" class="second-team" [ngClass]="{'futurMatchSecond': futurMatch && !liveMatch}">
             <app-team-info [team]="secondTeamSelected"></app-team-info>
+            <app-winstreak [MyTeam]="secondTeamSelected.team_name" [Matches]="AwayLastMatch"></app-winstreak>
         </div>
     </div>
 </div>

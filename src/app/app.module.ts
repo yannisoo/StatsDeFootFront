@@ -31,6 +31,7 @@ import { SpinnerComponent } from './components/_utils/spinner/spinner.component'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatIconModule} from '@angular/material/icon';
+import { WinstreakComponent } from './components/_utils/winstreak/winstreak.component';
 
 registerLocaleData(localeFr, 'fr');
 @NgModule({
@@ -56,7 +57,8 @@ registerLocaleData(localeFr, 'fr');
     MatchesAverageComponent,
     SearchBarComponent,
     PourcentagePassComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    WinstreakComponent
   ],
   imports: [
     BrowserModule,

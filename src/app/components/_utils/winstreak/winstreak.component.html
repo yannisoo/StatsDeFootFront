@@ -1,0 +1,10 @@
+<div class="holder">
+    <div class="circle" *ngFor="let item of standing" [ngClass]='{
+        green: item == "V",
+        grey: item == "N",
+        red: item == "D"
+
+    }'>
+    {{item}}
+</div>
+</div>
