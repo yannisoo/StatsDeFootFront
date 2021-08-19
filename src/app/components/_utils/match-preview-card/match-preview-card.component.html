@@ -5,7 +5,7 @@
 }"
 *ngIf="match.status != 'Match Cancelled' && match.status != 'Time to be defined'" (click)='OpenAMatch(match.fixture_id)'
 >
-    <app-team-info [componentParent]="component" [team]="match.homeTeam"></app-team-info>
+    <app-team-info [ngClass]="{'team-preview': !componentParent}" [componentParent]="component" [team]="match.homeTeam"></app-team-info>
     <div class="informations">
         <p class="score" *ngIf="match.status != 'Not Started' ">
             {{match.goalsHomeTeam}}
@@ -16,5 +16,5 @@
             <p>{{match.event_date | date:"d/MM/yyyy" }}</p>
         </div>
     </div>
-    <app-team-info [componentParent]="component" [team]="match.awayTeam"></app-team-info>
+    <app-team-info [ngClass]="{'team-preview': !componentParent}" [componentParent]="component" [team]="match.awayTeam"></app-team-info>
 </div>
