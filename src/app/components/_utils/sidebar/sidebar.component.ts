@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class SidebarComponent implements OnInit {
   @Input() fields;
   @Input() off;
+  @Input() filterOn;
   @Output() function: EventEmitter<any> = new EventEmitter();
   @Output() toggle: EventEmitter<any> = new EventEmitter();
   constructor() { }

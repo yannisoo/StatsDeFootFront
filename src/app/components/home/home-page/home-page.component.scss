@@ -38,6 +38,9 @@
         img{
         height: 25px;
     }
+    &:hover {
+        cursor: pointer;
+    }
 }
 p{
     color: #025920;

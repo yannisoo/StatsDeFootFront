@@ -11,9 +11,7 @@ import { MatchService } from 'src/app/services/match.service';
 export class HomePageComponent implements OnInit {
 
   // values used
-  leagues = [
-    { name: '2e Bundesliga', value: 2781, shown: false}
-  ];
+  leagues = [];
 
   // date used for getting matches
   date;
@@ -41,13 +39,25 @@ export class HomePageComponent implements OnInit {
   }
   changeDay(value){
     this.date = new Date(
-      this.date.getFullYear(),
-      this.date.getMonth(),
-      this.date.getDate() + value);
+    this.date.getFullYear(),
+    this.date.getMonth(),
+    this.date.getDate() + value);
     console.log(this.date)
     this.chooseDay(this.date)
   }
-
+  GetLeagues(){
+    this.leagues = []
+    this.matches.forEach(element => {
+      let value = element.league
+      value.value = element.league_id
+      value.shown = false
+      console.log(value)
+      var index = this.leagues.findIndex(x => x.name == value.name);
+      index === -1 ? this.leagues.push(value) : console.log("object already exists")
+      
+      console.log(this.leagues)
+    });
+  }
   activateFilter(selected){
     if (this.filterOn === true){
       this.leagues.forEach(league => {
@@ -92,6 +102,7 @@ export class HomePageComponent implements OnInit {
             this.stagedMatches = this.matches;``
             this.isLoaded = true
             console.log(this.matches)
+            this.GetLeagues()
           });
 
   }

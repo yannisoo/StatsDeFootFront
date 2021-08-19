@@ -1,6 +1,6 @@
 <div class="container">
 
-    <app-sidebar [fields]='leagues' [off]='toggle' (toggle)='filter(1)' (function)='activateFilter($event)'></app-sidebar>
+    <app-sidebar [filterOn]='filterOn' [fields]='leagues' [off]='toggle' (toggle)='filter(1)' (function)='activateFilter($event)'></app-sidebar>
     <div class="babyheader">
     <div class="datepicker">
         <img (click)="changeDay(-1)" src="../../../../assets/pics/54366.png" alt="" class="arrow revert">

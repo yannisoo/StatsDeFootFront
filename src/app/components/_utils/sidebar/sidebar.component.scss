@@ -10,9 +10,7 @@
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transition: 1s;
 }
-img{
-    height:30px;
-}
+
 .back{
     margin-top: 40px;
     margin-left: 40px;
@@ -23,6 +21,13 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
+    img{
+        height:30px;
+    }
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.2) ;
+    }
 }
 .hide{
     background: rgba(1, 64, 35, 0.1);
@@ -39,19 +44,42 @@ img{
 .out{
     right: -100vw;
 }
+.holder{
+    z-index: 40;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 .item{
+    transition: 1s;
     display: block;
     z-index: 40;
     display:flex;
-    height: 30px;
-    background-color: lightgrey;
+    height: 150px;
+    width: 40%;
+    margin: 20px 0;
+    filter: grayscale(100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
     text-align: center;
     align-items: center;
-    justify-content: center;
-    margin:10px;
+    justify-content: space-evenly;
     overflow: auto;
     &:hover {
         cursor: pointer;
         transform: scale(1.2) ;
     }
+    img{
+        width: 25%;
+    }
+    h5{
+        font-size: 15px;
+    }
+}
+.shown{
+    filter: grayscale(0%);
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
 }

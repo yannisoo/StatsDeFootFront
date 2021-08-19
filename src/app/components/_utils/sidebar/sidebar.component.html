@@ -5,7 +5,15 @@
     off: off != true
 }"class="sidebar">
     <div class="back"(click)='toggler()'>
-        <img src="../../../../assets/pics/left-arrow.png" alt="">
+        <img  src="../../../../assets/pics/left-arrow.png" alt="">
     </div>
-    <div class="item" *ngFor="let field of fields" (click)='activate(field)'>{{field.name}}</div>
+    <div class="holder">
+        <div [ngClass]="{
+            shown: field.shown == true || filterOn == false
+        }" class="item" *ngFor="let field of fields" (click)='activate(field)'> 
+        <h5>{{field.name}}</h5>  
+        <img src="{{field.logo}}" alt="">
+    </div>
+    </div>
+
 </div>
