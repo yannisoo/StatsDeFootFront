@@ -24,6 +24,7 @@ export class HomePageComponent implements OnInit {
   // check whether filter is on or nope
   filterOn = false;
 
+  toggle = false;
   isLoaded = false;
   tempDate;
 
@@ -70,7 +71,6 @@ export class HomePageComponent implements OnInit {
         this.filterOn = true;
       });
     }
-
   }
 
   async chooseDay(date){
@@ -91,8 +91,17 @@ export class HomePageComponent implements OnInit {
             this.matches = response.fixtures;
             this.stagedMatches = this.matches;``
             this.isLoaded = true
+            console.log(this.matches)
           });
 
+  }
+  filter(bool){
+    if(bool === 1){
+      this.toggle = false;
+    }else{
+      this.toggle = true;
+    }
+    console.log(this.toggle)
   }
   findMatch( home, away){
     this.router.navigate(['/compare/' + home + '/' + away]);

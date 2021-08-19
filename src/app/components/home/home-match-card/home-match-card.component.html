@@ -1,11 +1,11 @@
 <div class="card">
-    <h4 class="league">{{match.league.country}} / {{match.league.name}}</h4>
+    <h4 class="league"><img src="{{match.league.flag}}" width alt=""> / {{match.league.name}}</h4>
     <hr id="hr">
     <div class="score">
         <app-team-info [team]='match.homeTeam'></app-team-info>
         <div class="middleHolder">
-            <div class="time">{{ match.event_date | date: 'HH:mm' }}</div>
-            <div *ngIf="match.statusShort == '2H' || match.statusShort == '1H'" class="cote">{{match.elapsed}}"</div>
+            <div *ngIf="match.statusShort == 'NS'" class="cote"> {{ match.event_date | date: 'HH:mm' }}</div>
+            <div *ngIf="match.statusShort == '2H' || match.statusShort == '1H' || match.statusShort == 'HT'" >{{match.elapsed}}"</div>
             <div *ngIf="match.score.fulltime" class="cote">{{match.score.fulltime}}</div>
             <div *ngIf="!match.score.fulltime" class="cote">{{match.score.halftime}}</div>
 

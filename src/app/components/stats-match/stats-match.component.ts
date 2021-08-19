@@ -21,6 +21,7 @@ export class StatsMatchComponent implements OnInit {
     this.match.getMatch(this.matchId).subscribe((response) => {
       this.statistics = response.fixtures[0].statistics;
       this.data = response.fixtures[0];
+      console.log(this.data)
     });
   }
 

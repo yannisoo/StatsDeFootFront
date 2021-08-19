@@ -1,10 +1,17 @@
 <div class="container">
-    <!-- <app-sidebar [fields]='leagues' (function)='activateFilter($event)'></app-sidebar> -->
+
+    <app-sidebar [fields]='leagues' [off]='toggle' (toggle)='filter(1)' (function)='activateFilter($event)'></app-sidebar>
+    <div class="babyheader">
     <div class="datepicker">
-        <button (click)="changeDay(-1)">Previous</button>
+        <img (click)="changeDay(-1)" src="../../../../assets/pics/54366.png" alt="" class="arrow revert">
         <p>{{ date | date:"d/MM/yyyy"}}</p>
-        <button (click)="changeDay(1)">Next</button>
+        <img (click)="changeDay(1)" src="../../../../assets/pics/54366.png" alt="" class="arrow">
     </div>
+    <div class="filter" (click)="filter(0)">
+       <p>Toutes les ligues</p>  <img  src="../../../../assets/pics/filter.png" alt="">
+    </div>
+    </div>
+
     <div class="holder" *ngIf="isLoaded == false">
         <mat-spinner>
         </mat-spinner>

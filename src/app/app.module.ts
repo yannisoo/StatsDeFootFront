@@ -30,7 +30,7 @@ import { PourcentagePassComponent } from './components/statistics/pourcentage-pa
 import { SpinnerComponent } from './components/_utils/spinner/spinner.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-
+import {MatIconModule} from '@angular/material/icon';
 
 registerLocaleData(localeFr, 'fr');
 @NgModule({
@@ -63,7 +63,8 @@ registerLocaleData(localeFr, 'fr');
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatIconModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'fr' }],
   bootstrap: [AppComponent]

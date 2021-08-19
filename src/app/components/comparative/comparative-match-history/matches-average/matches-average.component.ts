@@ -18,6 +18,7 @@ export class MatchesAverageComponent implements OnChanges {
       let firstTeamShot = 0;
       let secondTeamShot = 0;
       let matches = 0;
+      // c'est ici pour trouver le prochain match 
       this.matches.forEach(element => {
         if (element.status === 'Match Finished') {
           if (element.awayTeam.team_id === this.firstTeam.team_id) {

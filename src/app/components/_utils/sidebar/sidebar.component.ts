@@ -7,12 +7,17 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
   @Input() fields;
+  @Input() off;
   @Output() function: EventEmitter<any> = new EventEmitter();
+  @Output() toggle: EventEmitter<any> = new EventEmitter();
   constructor() { }
 
   ngOnInit(): void {
   }
   activate(value){
     this.function.emit(value);
+  }
+  toggler(){
+    this.toggle.emit();
   }
 }
