@@ -1,18 +1,18 @@
 .container{
-    margin: 1.875em 0;
+    margin: 150px 0;
 }
 .shot-container-title{
     text-align: center;
-    font-size: 1.25em;
+    font-size: 2em;
 }
 .shot-container{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     height: 18.75em;
     p{
         line-height: 13.75em;
-        font-size: 1.25em;
+        font-size: 2em;
     }
 }
 

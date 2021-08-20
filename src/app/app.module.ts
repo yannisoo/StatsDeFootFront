@@ -34,6 +34,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { WinstreakComponent } from './components/_utils/winstreak/winstreak.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { TimelineComponent } from './components/_utils/timeline/timeline.component';
+import { ChartModule } from 'angular-highcharts';
+
 
 registerLocaleData(localeFr, 'fr');
 @NgModule({
@@ -71,7 +73,8 @@ registerLocaleData(localeFr, 'fr');
     MatProgressSpinnerModule,
     MatIconModule,
     CommonModule,
-    MatTabsModule
+    MatTabsModule,
+    ChartModule 
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'fr' }],
   bootstrap: [AppComponent]

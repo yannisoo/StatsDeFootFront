@@ -7,6 +7,7 @@ import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 })
 export class ShotsComponent implements OnChanges {
   @Input() statistics;
+  @Input() data;
   homeTeam;
   awayTeam;
   constructor() { }

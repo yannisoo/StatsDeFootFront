@@ -35,28 +35,6 @@ export class PourcentagePassComponent implements OnInit {
     // Transform  the data in usable data for chart
     const possessionHome = this.statistics['Passes %'].home.replace('%', '');
     const possessionAway = this.statistics['Passes %'].away.replace('%', '');
-    // Chart creation
-    const options = this.options(true);
-    const ctx = document.getElementById('possession') as HTMLCanvasElement;
-    const myChart = new Chart(ctx, {
-      type:  'doughnut',
-      data: {
-        labels : [this.data.awayTeam.team_name, this.data.homeTeam.team_name],
-        datasets: [{
-          data: [possessionAway, possessionHome],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.6)',
-            'rgba(54, 162, 235, 0.6)',
-        ],
-        borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)'
-        ],
-        borderWidth: 1
-        }]
-      },
-      options,
-    });
 
 }
 
