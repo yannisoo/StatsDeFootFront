@@ -10,16 +10,20 @@
   height: 80%;
   display: flex;
   flex-wrap: wrap;
+  align-items: stretch;
   justify-content: space-evenly;
   padding: 5%;
   padding-top: 0;
+  gap: 25px;
+
 }
 
 .item {
+  flex-basis: auto;
   width: 200px;
+  height: 100%;
   display: block;
   flex-direction: column;
-  margin-bottom: 15%;
   margin-top: 0;
 }
 
