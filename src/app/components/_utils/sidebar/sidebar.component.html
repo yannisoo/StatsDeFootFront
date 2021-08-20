@@ -1,10 +1,10 @@
 <div [ngClass]="{
     out: off != true
-}" class="hide"></div>
+}" (click)='toggler()' class="hide"></div>
 <div [ngClass]="{
     off: off != true
 }"class="sidebar">
-    <div class="back"(click)='toggler()'>
+    <div class="back" (click)='toggler()'>
         <img  src="../../../../assets/pics/left-arrow.png" alt="">
     </div>
     <div class="icon">
