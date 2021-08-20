@@ -1,10 +1,11 @@
-<app-match-preview-card [match]='data' ></app-match-preview-card>
-<div class="stats-match-nav">
+<app-match-preview-card *ngIf="data" [match]='data' ></app-match-preview-card>
+<div *ngIf="data" class="stats-match-nav">
     <div>Stats de {{data.homeTeam.name}}</div>
     <div>Stats du match</div>
     <div>Stats de {{data.awayTeam.name}}</div>
 </div>
 <div class="container">
+    <app-timeline *ngIf="data" [teams]="teams" [events]="data.events"></app-timeline>
     <div class="first-line">
         <app-possession-pass *ngIf="statistics" [statistics]='statistics' [data]='data'></app-possession-pass>
         <app-fouls *ngIf="statistics" [statistics]='statistics'></app-fouls>

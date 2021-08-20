@@ -16,10 +16,10 @@ export class FoulsTeamComponent implements OnChanges {
   constructor() { }
 
   ngOnChanges(): void {
-    this.foulSize = 15 + (this.team.fouls * 2)
-    this.yellow_cardSize = 15 + (this.team.yellow_card * 2)
-    this.red_cardSize = 15 + (this.team.red_card * 2)
-    this.offsideSize = 15 + (this.team.offside * 2)
+    this.foulSize = 15 + (this.team.fouls * 1.9)
+    this.yellow_cardSize = 15 + (this.team.yellow_card * 5)
+    this.red_cardSize = 15 + (this.team.red_card * 15)
+    this.offsideSize = 15 + (this.team.offside * 4)
   }
   
 }

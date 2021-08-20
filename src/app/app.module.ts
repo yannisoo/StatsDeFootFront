@@ -33,6 +33,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatIconModule} from '@angular/material/icon';
 import { WinstreakComponent } from './components/_utils/winstreak/winstreak.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { TimelineComponent } from './components/_utils/timeline/timeline.component';
 
 registerLocaleData(localeFr, 'fr');
 @NgModule({
@@ -59,7 +60,8 @@ registerLocaleData(localeFr, 'fr');
     SearchBarComponent,
     PourcentagePassComponent,
     SpinnerComponent,
-    WinstreakComponent
+    WinstreakComponent,
+    TimelineComponent
   ],
   imports: [
     BrowserModule,

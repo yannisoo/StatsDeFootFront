@@ -1,0 +1,20 @@
+<div class="holder">
+    
+    
+    <div class="line">
+        <div class="HT start"></div>
+        <div class="HT"></div>
+        <div class="HT end"></div>
+        <div (mouseenter)="ninja(index)"  [ngStyle]="{'left': 'calc(' + item.position + 'vw - 40px)'}" class="dot event" *ngFor="let item of events; let index = index">
+            
+            <div class="tooltip" id="{{index + 1}}">
+                <img *ngIf="item.teamName == teams.homeTeam" src="{{teams.homeLogo}}" alt=""> 
+                <img *ngIf="item.teamName == teams.awayTeam" src="{{teams.awayLogo}}" alt=""> 
+                <p> {{item.player}}  {{item.elapsed}}"</p> 
+            </div>
+            <img *ngIf="item.type == 'Goal'" src="../../../../assets/goal.svg" alt="">
+            <img *ngIf="item.type == 'subst'" src="../../../../assets/player-substitution.svg" style="width: 40px;" alt="">
+            <img *ngIf="item.type == 'Card'" src="../../../../assets/foul.svg" style="width: 40px;" alt="">
+        </div>
+    </div>
+</div>

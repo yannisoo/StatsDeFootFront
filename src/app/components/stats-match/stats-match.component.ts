@@ -11,6 +11,12 @@ export class StatsMatchComponent implements OnInit {
   matchId;
   statistics;
   data;
+  teams = {
+    homeLogo: '',
+    homeTeam: '',
+    awayTeam: '',
+    awayLogo: ''
+  };
   constructor(
     private route: ActivatedRoute,
     private match: MatchService
@@ -22,6 +28,10 @@ export class StatsMatchComponent implements OnInit {
       this.statistics = response.fixtures[0].statistics;
       this.data = response.fixtures[0];
       console.log(this.data)
+      this.teams.homeLogo = response.fixtures[0].homeTeam.logo;
+      this.teams.homeTeam = response.fixtures[0].homeTeam.team_name;
+      this.teams.awayLogo = response.fixtures[0].awayTeam.logo;
+      this.teams.awayTeam = response.fixtures[0].awayTeam.team_name;
     });
   }
 

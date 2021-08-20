@@ -20,12 +20,6 @@
     font-family: 'Overpass', sans-serif;
 }
 
-a{
-    text-decoration: none;
-    font-size: 1.5em;
-    white-space: nowrap;
-    color: #014023;
-}
 
 ul{
     display: flex;
@@ -33,6 +27,13 @@ ul{
 li{
     list-style-type: none;
     margin-right: 10%;
+    a{
+        text-decoration: none;
+        font-size: 1.5em;
+        white-space: nowrap;
+        color: #014023;
+    }
+    
 }
 @media only screen and (max-width: 625px) {
     a{
